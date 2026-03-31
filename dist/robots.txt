@@ -1,0 +1,11 @@
+# Robots.txt for Tich Rubble Removal
+# https://tichrubble.co.za
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://tichrubble.co.za/sitemap.xml
+
+# Crawl-delay (optional, for respectful crawling)
+Crawl-delay: 1

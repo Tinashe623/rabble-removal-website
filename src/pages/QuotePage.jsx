@@ -145,7 +145,9 @@ function QuotePage() {
                         bg="brand.offWhite"
                         border="1px"
                         borderColor="gray.200"
+                        _placeholder={{ color: 'gray.400' }}
                         _focus={{ borderColor: 'brand.accent', boxShadow: '0 0 0 1px #f59e0b' }}
+                        _hover={{ borderColor: 'gray.300' }}
                       />
                       <FormErrorMessage>{errors.name}</FormErrorMessage>
                     </FormControl>
@@ -162,7 +164,9 @@ function QuotePage() {
                           bg="brand.offWhite"
                           border="1px"
                           borderColor="gray.200"
+                          _placeholder={{ color: 'gray.400' }}
                           _focus={{ borderColor: 'brand.accent', boxShadow: '0 0 0 1px #f59e0b' }}
+                          _hover={{ borderColor: 'gray.300' }}
                         />
                         <FormErrorMessage>{errors.phone}</FormErrorMessage>
                       </FormControl>
@@ -178,7 +182,9 @@ function QuotePage() {
                           bg="brand.offWhite"
                           border="1px"
                           borderColor="gray.200"
+                          _placeholder={{ color: 'gray.400' }}
                           _focus={{ borderColor: 'brand.accent', boxShadow: '0 0 0 1px #f59e0b' }}
+                          _hover={{ borderColor: 'gray.300' }}
                         />
                       </FormControl>
                     </SimpleGrid>
@@ -193,7 +199,9 @@ function QuotePage() {
                         bg="brand.offWhite"
                         border="1px"
                         borderColor="gray.200"
+                        _placeholder={{ color: 'gray.400' }}
                         _focus={{ borderColor: 'brand.accent', boxShadow: '0 0 0 1px #f59e0b' }}
+                        _hover={{ borderColor: 'gray.300' }}
                       />
                       <FormErrorMessage>{errors.location}</FormErrorMessage>
                     </FormControl>
@@ -208,7 +216,9 @@ function QuotePage() {
                         bg="brand.offWhite"
                         border="1px"
                         borderColor="gray.200"
+                        _placeholder={{ color: 'gray.400' }}
                         _focus={{ borderColor: 'brand.accent', boxShadow: '0 0 0 1px #f59e0b' }}
+                        _hover={{ borderColor: 'gray.300' }}
                       >
                         <option value="rubble-removal">Rubble Removal</option>
                         <option value="site-clearing">Site Clearing</option>
@@ -229,8 +239,10 @@ function QuotePage() {
                         bg="brand.offWhite"
                         border="1px"
                         borderColor="gray.200"
-                        rows={4}
+                        _placeholder={{ color: 'gray.400' }}
                         _focus={{ borderColor: 'brand.accent', boxShadow: '0 0 0 1px #f59e0b' }}
+                        _hover={{ borderColor: 'gray.300' }}
+                        rows={4}
                       />
                     </FormControl>
 
