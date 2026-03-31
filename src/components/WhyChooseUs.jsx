@@ -43,6 +43,8 @@ function WhyChooseUs() {
           title="Why Choose Us"
           subtitle="What sets Tich Rubble Removal apart from the rest"
           alignment="center"
+          highlightWord="Choose Us"
+          highlightSubtitle="Tich Rubble Removal"
         />
 
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8} mt={12}>

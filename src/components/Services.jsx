@@ -47,8 +47,10 @@ function Services() {
       <Container maxW="1200px">
         <SectionHeading
           title="Our Services"
-          subtitle="Comprehensive rubble removal and site preparation solutions"
+          subtitle="Comprehensive rubble removal and site preparation solutions across South Africa"
           alignment="center"
+          highlightWord="Services"
+          highlightSubtitle="South Africa"
         />
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={12}>

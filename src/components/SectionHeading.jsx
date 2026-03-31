@@ -1,10 +1,44 @@
 import { Box, Heading, Text, VStack } from '@chakra-ui/react'
 
-function SectionHeading({ title, subtitle, alignment = 'left' }) {
+function SectionHeading({ title, subtitle, alignment = 'left', highlightWord = null, highlightSubtitle = null }) {
   const alignMap = {
     left: 'flex-start',
     center: 'center',
     right: 'flex-end',
+  }
+
+  const renderHighlightedTitle = () => {
+    if (!highlightWord || !title.includes(highlightWord)) {
+      return title
+    }
+
+    const parts = title.split(highlightWord)
+    return (
+      <>
+        {parts[0]}
+        <Box as="span" bgGradient="linear(to-r, brand.accent, #ff8c00)" bgClip="text" fontWeight="700">
+          {highlightWord}
+        </Box>
+        {parts[1]}
+      </>
+    )
+  }
+
+  const renderHighlightedSubtitle = () => {
+    if (!highlightSubtitle || !subtitle.includes(highlightSubtitle)) {
+      return subtitle
+    }
+
+    const parts = subtitle.split(highlightSubtitle)
+    return (
+      <>
+        {parts[0]}
+        <Box as="span" bgGradient="linear(to-r, brand.accent, #ff8c00)" bgClip="text" fontWeight="600">
+          {highlightSubtitle}
+        </Box>
+        {parts[1]}
+      </>
+    )
   }
 
   return (
@@ -15,13 +49,14 @@ function SectionHeading({ title, subtitle, alignment = 'left' }) {
         color="brand.dark"
         fontWeight="400"
         textAlign={alignment}
+        lineHeight="1.2"
       >
-        {title}
+        {highlightWord ? renderHighlightedTitle() : title}
       </Heading>
       <Box
         w="80px"
         h="4px"
-        bg="brand.accent"
+        bgGradient="linear(to-r, brand.accent, #ff8c00)"
         borderRadius="2px"
         mx={alignment === 'center' ? 'auto' : 0}
       />
@@ -33,7 +68,7 @@ function SectionHeading({ title, subtitle, alignment = 'left' }) {
           textAlign={alignment}
           mt={2}
         >
-          {subtitle}
+          {highlightSubtitle ? renderHighlightedSubtitle() : subtitle}
         </Text>
       )}
     </VStack>

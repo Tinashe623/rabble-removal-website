@@ -46,6 +46,7 @@ function Testimonials() {
           title="What Our Clients Say"
           subtitle="Trusted by homeowners and businesses across South Africa"
           alignment="center"
+          highlightWord="Clients Say"
         />
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mt={12}>

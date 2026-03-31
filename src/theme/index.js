@@ -13,8 +13,8 @@ const theme = extendTheme({
     },
   },
   fonts: {
-    heading: '"Archivo Black", sans-serif',
-    body: '"DM Sans", sans-serif',
+    heading: '"Russo One", sans-serif',
+    body: '"Plus Jakarta Sans", sans-serif',
   },
   styles: {
     global: {

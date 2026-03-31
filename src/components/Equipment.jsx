@@ -53,6 +53,7 @@ function Equipment() {
           title="Our Fleet"
           subtitle="Professional heavy machinery for any job size"
           alignment="center"
+          highlightWord="Fleet"
         />
 
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={12}>

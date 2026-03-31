@@ -62,6 +62,7 @@ function FAQ() {
           title="Frequently Asked Questions"
           subtitle="Find answers to common questions about our services"
           alignment="center"
+          highlightWord="Questions"
         />
 
         <MotionBox
