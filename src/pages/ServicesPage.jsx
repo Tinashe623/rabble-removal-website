@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { FaTruckLoading, FaLayerGroup, FaTractor, FaRecycle, FaArrowRight } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import SectionHeading from '../components/SectionHeading'
+import SEO from '../components/SEO'
 
 const MotionBox = motion(Box)
 
@@ -40,6 +41,11 @@ const services = [
 function ServicesPage() {
   return (
     <Box pt="70px">
+      <SEO 
+        title="Our Services | Rubble Removal, TLB Hire & Site Clearing"
+        description="Professional services including rubble removal, site clearing, TLB hire, and waste disposal in Johannesburg & Pretoria. Competitive rates, same-day service."
+        keywords="rubble removal services, TLB hire, site clearing, waste disposal, construction cleanup, excavation services"
+      />
       <Box py={{ base: '60px', md: '100px' }} bg="brand.dark">
         <Container maxW="1200px">
           <VStack spacing={4} textAlign="center">

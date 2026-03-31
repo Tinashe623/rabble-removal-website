@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { FaPhone, FaWhatsapp, FaClock, FaPaperPlane, FaMapMarkerAlt } from 'react-icons/fa'
+import SEO from '../components/SEO'
 
 const MotionBox = motion(Box)
 
@@ -91,6 +92,11 @@ function QuotePage() {
 
   return (
     <Box pt="70px">
+      <SEO 
+        title="Get a Free Quote | Tich Rubble Removal"
+        description="Request a free quote for rubble removal, TLB hire, or site clearing services. We respond within 24 hours. Call us or fill out the form today!"
+        keywords="get quote, rubble removal quote, TLB hire quote, contact us, request quote"
+      />
       <Box py={{ base: '60px', md: '100px' }} bg="brand.dark">
         <Container maxW="1200px">
           <VStack spacing={4} textAlign="center">

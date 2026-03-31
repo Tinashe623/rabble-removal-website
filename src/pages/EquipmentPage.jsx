@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 import SectionHeading from '../components/SectionHeading'
+import SEO from '../components/SEO'
 
 const MotionBox = motion(Box)
 
@@ -60,6 +61,11 @@ const equipment = [
 function EquipmentPage() {
   return (
     <Box pt="70px">
+      <SEO 
+        title="Our Fleet | TLB & Truck Equipment for Hire"
+        description="View our range of tipper trucks and TLB machines for rubble removal and excavation. 8-ton, 6-ton trucks and 4x4 TLB available. Equipment for any job size."
+        keywords="TLB for hire, tipper truck, excavator rental, construction equipment, rubble truck, TLB machine"
+      />
       <Box py={{ base: '60px', md: '100px' }} bg="brand.dark">
         <Container maxW="1200px">
           <VStack spacing={4} textAlign="center">
