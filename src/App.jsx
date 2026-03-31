@@ -7,11 +7,19 @@ import Home from './pages/Home'
 import ServicesPage from './pages/ServicesPage'
 import EquipmentPage from './pages/EquipmentPage'
 import QuotePage from './pages/QuotePage'
+import Analytics from './components/Analytics'
+
+// Replace with your actual tracking IDs when ready
+// Get GA4 ID from: https://analytics.google.com
+// Get Facebook Pixel ID from: https://business.facebook.com
+const GA4_ID = null // e.g., 'G-XXXXXXXXXX'
+const FACEBOOK_PIXEL_ID = null // e.g., '1234567890'
 
 function App() {
   return (
     <HelmetProvider>
       <ChakraProvider theme={theme}>
+        <Analytics ga4Id={GA4_ID} facebookPixelId={FACEBOOK_PIXEL_ID} />
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Layout />}>

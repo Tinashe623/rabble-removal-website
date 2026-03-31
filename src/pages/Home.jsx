@@ -4,6 +4,7 @@ import Services from '../components/Services'
 import Equipment from '../components/Equipment'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Testimonials from '../components/Testimonials'
+import FAQ from '../components/FAQ'
 import SEO from '../components/SEO'
 
 function Home() {
@@ -19,6 +20,7 @@ function Home() {
       <Equipment />
       <WhyChooseUs />
       <Testimonials />
+      <FAQ />
     </Box>
   )
 }
