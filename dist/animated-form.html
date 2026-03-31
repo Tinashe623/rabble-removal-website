@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stunning Animated Form</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #6366f1;
+      --primary-glow: #818cf8;
+      --secondary: #ec4899;
+      --accent: #06b6d4;
+      --dark: #0f0f1a;
+      --dark-card: rgba(255, 255, 255, 0.03);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shine: rgba(255, 255, 255, 0.15);
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --error: #f43f5e;
+      --success: #10b981;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--dark);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      overflow-x: hidden;
+    }
+
+    /* Floating Background Orbs */
+    .orb-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.5;
+      animation: orbFloat 20s ease-in-out infinite;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: var(--primary);
+      top: -100px;
+      left: -100px;
+      animation-delay: 0s;
+    }
+
+    .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: var(--secondary);
+      bottom: -50px;
+      right: -50px;
+      animation-delay: -5s;
+    }
+
+    .orb-3 {
+      width: 250px;
+      height: 250px;
+      background: var(--accent);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation-delay: -10s;
+    }
+
+    .orb-4 {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      top: 60%;
+      left: 20%;
+      animation-delay: -7s;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      25% {
+        transform: translate(30px, -30px) scale(1.1);
+      }
+      50% {
+        transform: translate(-20px, 20px) scale(0.95);
+      }
+      75% {
+        transform: translate(-30px, -20px) scale(1.05);
+      }
+    }
+
+    /* Form Container with Breathing Animation */
+    .form-wrapper {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .form-card {
+      background: var(--dark-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 48px 40px;
+      position: relative;
+      animation: breathe 4s ease-in-out infinite;
+      overflow: hidden;
+    }
+
+    @keyframes breathe {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 1px var(--glass-border),
+                    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                    0 0 100px -20px rgba(99, 102, 241, 0.3);
+      }
+      50% {
+        transform: scale(1.005);
+        box-shadow: 0 0 0 1px var(--glass-border),
+                    0 30px 60px -12px rgba(0, 0, 0, 0.6),
+                    0 0 120px -20px rgba(99, 102, 241, 0.4);
+      }
+    }
+
+    /* Animated Border Gradient */
+    .form-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 24px;
+      padding: 1px;
+      background: linear-gradient(135deg, 
+        var(--primary) 0%, 
+        var(--secondary) 25%, 
+        var(--accent) 50%, 
+        var(--primary) 75%, 
+        var(--secondary) 100%);
+      background-size: 300% 300%;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      animation: borderGradient 8s ease infinite;
+      pointer-events: none;
+    }
+
+    @keyframes borderGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .form-title {
+      color: var(--text);
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .form-subtitle {
+      color: var(--text-muted);
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    /* Form Groups with Floating Animation */
+    .form-group {
+      position: relative;
+      margin-bottom: 28px;
+      animation: floatGroup 3s ease-in-out infinite;
+    }
+
+    .form-group:nth-child(1) { animation-delay: 0s; }
+    .form-group:nth-child(2) { animation-delay: 0.2s; }
+    .form-group:nth-child(3) { animation-delay: 0.4s; }
+    .form-group:nth-child(4) { animation-delay: 0.6s; }
+    .form-group:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes floatGroup {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 18px 20px;
+      padding-top: 26px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--glass-border);
+      border-radius: 14px;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      font-size: 15px;
+      outline: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    /* Make placeholder transparent so label acts as placeholder */
+    .form-group input::placeholder,
+    .form-group textarea::placeholder {
+      color: transparent;
+    }
+
+    /* Keep label visible inside input when not focused */
+    .form-group label {
+      opacity: 0.7;
+    }
+    
+    /* Hide label when placeholder would show (optional) */
+    .form-group input:placeholder-shown + label,
+    .form-group textarea:placeholder-shown + label {
+      opacity: 0.7;
+    }
+
+    /* Input Glow Shadow Animation */
+    .form-group input,
+    .form-group textarea {
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+
+    .form-group:nth-child(1) input { animation-delay: 0s; }
+    .form-group:nth-child(2) input { animation-delay: 0.5s; }
+    .form-group:nth-child(3) input { animation-delay: 1s; }
+    .form-group:nth-child(4) input { animation-delay: 1.5s; }
+    .form-group:nth-child(5) textarea { animation-delay: 2s; }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 transparent,
+                    0 0 20px -5px rgba(99, 102, 241, 0.2);
+      }
+      50% {
+        box-shadow: 0 0 0 1px var(--glass-border),
+                    0 0 30px -5px rgba(236, 72, 153, 0.3),
+                    0 0 60px -10px rgba(6, 182, 212, 0.2);
+      }
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2),
+                  0 0 30px -5px rgba(99, 102, 241, 0.3),
+                  0 0 60px -10px rgba(99, 102, 241, 0.2);
+    }
+
+    /* Floating Label - Starts inside, floats to border on focus */
+    .form-group label {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 15px;
+      font-weight: 400;
+      pointer-events: none;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 8px;
+      opacity: 0.7;
+    }
+
+    .form-group textarea + label {
+      top: 20px;
+      transform: none;
+    }
+
+    .form-group input:focus ~ label,
+    .form-group input:not(:placeholder-shown) ~ label,
+    .form-group textarea:focus ~ label,
+    .form-group textarea:not(:placeholder-shown) ~ label {
+      top: -8px;
+      transform: translateY(0);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary-glow);
+      background: var(--dark);
+      margin-left: -4px;
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+    }
+
+    /* Make label always visible inside input */
+    .form-group input:placeholder-shown + label,
+    .form-group textarea:placeholder-shown + label {
+      opacity: 0.7;
+    }
+
+    /* Glow Halo Effect on Focus */
+    .form-group input:focus ~ label::before,
+    .form-group textarea:focus ~ label::before {
+      content: '';
+      position: absolute;
+      inset: -8px;
+      background: radial-gradient(ellipse at center, 
+        rgba(99, 102, 241, 0.3) 0%, 
+        transparent 70%);
+      border-radius: 50%;
+      animation: haloPulse 2s ease-in-out infinite;
+      z-index: -1;
+    }
+
+    @keyframes haloPulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 1; transform: scale(1.1); }
+    }
+
+    /* Ripple Shockwave Effect */
+    .ripple {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+      transform: scale(0);
+      animation: rippleEffect 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+      to {
+        transform: scale(4);
+        opacity: 0;
+      }
+    }
+
+    /* Submit Button with Bobbing & Particles */
+    .submit-btn {
+      width: 100%;
+      padding: 18px 32px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: none;
+      border-radius: 14px;
+      color: white;
+      font-family: 'Outfit', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      animation: bobbing 2s ease-in-out infinite;
+      transition: all 0.3s ease;
+    }
+
+    @keyframes bobbing {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-4px) rotate(0.5deg); }
+      75% { transform: translateY(2px) rotate(-0.5deg); }
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.5),
+                  0 0 40px -10px rgba(236, 72, 153, 0.4);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* Particle Burst on Hover */
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--secondary), var(--accent));
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .submit-btn:hover::before {
+      opacity: 1;
+    }
+
+    .submit-btn span {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Particles */
+    .particles {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: white;
+      opacity: 0;
+      top: 50%;
+      left: 50%;
+    }
+
+    .submit-btn:hover .particle {
+      animation: particleBurst 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .particle:nth-child(1) { --angle: 0deg; --distance: 60px; --delay: 0s; }
+    .particle:nth-child(2) { --angle: 45deg; --distance: 80px; --delay: 0.05s; }
+    .particle:nth-child(3) { --angle: 90deg; --distance: 70px; --delay: 0.1s; }
+    .particle:nth-child(4) { --angle: 135deg; --distance: 90px; --delay: 0.15s; }
+    .particle:nth-child(5) { --angle: 180deg; --distance: 55px; --delay: 0.2s; }
+    .particle:nth-child(6) { --angle: 225deg; --distance: 75px; --delay: 0.25s; }
+    .particle:nth-child(7) { --angle: 270deg; --distance: 65px; --delay: 0.3s; }
+    .particle:nth-child(8) { --angle: 315deg; --distance: 85px; --delay: 0.35s; }
+
+    @keyframes particleBurst {
+      0% {
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(0);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(var(--distance) * -1));
+        opacity: 0;
+      }
+    }
+
+    /* Error State */
+    .form-group.error input,
+    .form-group.error textarea {
+      border-color: var(--error);
+      animation: errorShake 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
+
+    @keyframes errorShake {
+      0%, 100% { transform: translateX(0); }
+      10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+      20%, 40%, 60%, 80% { transform: translateX(4px); }
+    }
+
+    .error-message {
+      position: absolute;
+      bottom: -22px;
+      left: 20px;
+      font-size: 12px;
+      color: var(--error);
+      opacity: 0;
+      transform: translateY(-10px);
+      animation: errorFloatIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+    }
+
+    @keyframes errorFloatIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Success State */
+    .success-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(16, 185, 129, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .success-overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .success-checkmark {
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+
+    .checkmark-circle {
+      width: 80px;
+      height: 80px;
+      border: 3px solid var(--success);
+      border-radius: 50%;
+      position: absolute;
+      animation: spiralIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .checkmark-check {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 30px;
+      height: 15px;
+      border: 3px solid var(--success);
+      border-top: none;
+      border-right: none;
+      transform: translate(-50%, -70%) rotate(-45deg) scale(0);
+      animation: checkDraw 0.4s 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes spiralIn {
+      0% {
+        transform: scale(0) rotate(-180deg);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+    }
+
+    @keyframes checkDraw {
+      to {
+        transform: translate(-50%, -70%) rotate(-45deg) scale(1);
+      }
+    }
+
+    .success-text {
+      text-align: center;
+      margin-top: 20px;
+      color: var(--success);
+      font-size: 18px;
+      font-weight: 600;
+      opacity: 0;
+      animation: fadeInUp 0.4s 0.6s forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Glassmorphism Details */
+    .glass-shine {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: linear-gradient(180deg, 
+        var(--glass-shine) 0%, 
+        transparent 100%);
+      pointer-events: none;
+      border-radius: 24px 24px 0 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 540px) {
+      .form-card {
+        padding: 36px 24px;
+      }
+      .form-title {
+        font-size: 24px;
+      }
+    }
+
+    /* Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+      
+      .orb, .form-card, .form-group, .submit-btn, .particle {
+        animation: none;
+      }
+      
+      .form-group input:focus ~ label,
+      .form-group input:not(:placeholder-shown) ~ label {
+        top: 6px;
+        transform: translateY(0);
+        font-size: 11px;
+        font-weight: 600;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Floating Background Orbs -->
+  <div class="orb-container">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+  </div>
+
+  <!-- Form Card -->
+  <div class="form-wrapper">
+    <div class="form-card">
+      <div class="glass-shine"></div>
+      
+      <h1 class="form-title">Get In Touch</h1>
+      <p class="form-subtitle">Send us a message and we'll respond within 24 hours</p>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <input type="text" id="name" name="name" placeholder=" " required>
+          <label for="name">Your Name</label>
+        </div>
+
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder=" " required>
+          <label for="email">Email Address</label>
+        </div>
+
+        <div class="form-group">
+          <input type="tel" id="phone" name="phone" placeholder=" ">
+          <label for="phone">Phone Number</label>
+        </div>
+
+        <div class="form-group">
+          <input type="text" id="subject" name="subject" placeholder=" " required>
+          <label for="subject">Subject</label>
+        </div>
+
+        <div class="form-group">
+          <textarea id="message" name="message" placeholder=" " required></textarea>
+          <label for="message">Your Message</label>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <span>Send Message</span>
+          <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+          </div>
+        </button>
+      </form>
+
+      <!-- Success Overlay -->
+      <div class="success-overlay" id="successOverlay">
+        <div>
+          <div class="success-checkmark">
+            <div class="checkmark-circle"></div>
+            <div class="checkmark-check"></div>
+          </div>
+          <p class="success-text">Message Sent!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Ripple Effect on Input Click
+    document.querySelectorAll('.form-group input, .form-group textarea').forEach(input => {
+      input.addEventListener('click', function(e) {
+        const rect = this.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        
+        const ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        
+        this.parentElement.appendChild(ripple);
+        
+        setTimeout(() => ripple.remove(), 600);
+      });
+    });
+
+    // Form Submission
+    const form = document.getElementById('contactForm');
+    const successOverlay = document.getElementById('successOverlay');
+    const submitBtn = form.querySelector('.submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Clear previous errors
+      document.querySelectorAll('.form-group').forEach(group => {
+        group.classList.remove('error');
+        const errorMsg = group.querySelector('.error-message');
+        if (errorMsg) errorMsg.remove();
+      });
+      
+      // Simple validation
+      let isValid = true;
+      const name = document.getElementById('name');
+      const email = document.getElementById('email');
+      const subject = document.getElementById('subject');
+      const message = document.getElementById('message');
+      
+      if (!name.value.trim()) {
+        showError(name, 'Name is required');
+        isValid = false;
+      }
+      
+      if (!email.value.trim() || !email.value.includes('@')) {
+        showError(email, 'Valid email is required');
+        isValid = false;
+      }
+      
+      if (!subject.value.trim()) {
+        showError(subject, 'Subject is required');
+        isValid = false;
+      }
+      
+      if (!message.value.trim()) {
+        showError(message, 'Message is required');
+        isValid = false;
+      }
+      
+      if (isValid) {
+        // Show success
+        submitBtn.style.display = 'none';
+        successOverlay.classList.add('show');
+        
+        // Reset after 3 seconds
+        setTimeout(() => {
+          form.reset();
+          submitBtn.style.display = 'block';
+          successOverlay.classList.remove('show');
+        }, 3000);
+      }
+    });
+
+    function showError(input, message) {
+      const group = input.parentElement;
+      group.classList.add('error');
+      
+      const errorDiv = document.createElement('div');
+      errorDiv.className = 'error-message';
+      errorDiv.textContent = message;
+      group.appendChild(errorDiv);
+    }
+
+    // GPU Acceleration for Smooth Animations
+    if (typeof requestAnimationFrame !== 'undefined') {
+      let lastTime = 0;
+      const fps = 60;
+      const interval = 1000 / fps;
+      
+      function animate(currentTime) {
+        requestAnimationFrame(animate);
+        const delta = currentTime - lastTime;
+        
+        if (delta > interval) {
+          lastTime = currentTime - (delta % interval);
+        }
+      }
+      
+      requestAnimationFrame(animate);
+    }
+  </script>
+</body>
+</html>
