@@ -8,12 +8,24 @@ import {
   Button,
   Flex,
   Icon,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FaTruck, FaPhone, FaWhatsapp, FaCheckCircle } from 'react-icons/fa'
+import { FaTruck, FaPhone, FaWhatsapp, FaCheckCircle, FaMobileAlt, FaHeadset } from 'react-icons/fa'
 
 const MotionBox = motion(Box)
 const MotionFlex = motion(Flex)
+
+const phoneNumbers = [
+  { label: 'Main Office', number: '+27 12 345 6789', icon: FaHeadset, available: 'Mon-Sat 7AM-6PM' },
+  { label: 'Mobile', number: '+27 82 345 6789', icon: FaMobileAlt, available: 'Available for urgent calls' },
+]
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -35,11 +47,16 @@ const itemVariants = {
 }
 
 function Hero() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
   const scrollToQuote = () => {
     const element = document.querySelector('#quote')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
+  }
+
+  const handleCall = (number) => {
+    window.location.href = number.replace(/\s/g, '')
   }
 
   return (
@@ -154,8 +171,7 @@ function Hero() {
                 size="lg"
                 px={6}
                 leftIcon={<FaPhone size={14} />}
-                as="a"
-                href="tel:+27123456789"
+                onClick={onOpen}
               >
                 Call Now
               </Button>
@@ -204,6 +220,51 @@ function Hero() {
         bgGradient="linear(to-t, brand.dark, transparent)"
         zIndex={2}
       />
+
+      {/* Call Now Modal */}
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay bg="blackAlpha.700" backdropFilter="blur(5px)" />
+        <ModalContent bg="brand.dark" border="1px" borderColor="gray.700" borderRadius="xl" mx={4}>
+          <ModalHeader color="white" textAlign="center" pt={8}>
+            <Icon as={FaPhone} color="brand.accent" fontSize="2xl" mb={2} />
+            <Text fontSize="xl" fontWeight="600">Call Us</Text>
+            <Text fontSize="sm" color="gray.400" fontWeight="400" mt={1}>
+              Choose a number to call
+            </Text>
+          </ModalHeader>
+          <ModalCloseButton color="white" />
+          <ModalBody pb={8}>
+            <VStack spacing={4}>
+              {phoneNumbers.map((item, idx) => (
+                <Button
+                  key={idx}
+                  w="100%"
+                  h="auto"
+                  py={4}
+                  px={6}
+                  bg="brand.primary"
+                  color="white"
+                  borderRadius="lg"
+                  onClick={() => handleCall(item.number)}
+                  _hover={{ bg: 'brand.accent', transform: 'translateY(-2px)' }}
+                  transition="all 0.3s ease"
+                  leftIcon={<Icon as={item.icon} color="brand.accent" />}
+                >
+                  <VStack align="flex-start" spacing={0}>
+                    <Text fontWeight="600">{item.label}</Text>
+                    <Text fontSize="lg" fontWeight="700" color="brand.accent">
+                      {item.number}
+                    </Text>
+                    <Text fontSize="xs" color="gray.400" fontWeight="400">
+                      {item.available}
+                    </Text>
+                  </VStack>
+                </Button>
+              ))}
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   )
 }

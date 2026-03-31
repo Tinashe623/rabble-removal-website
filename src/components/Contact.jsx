@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import {
   Box,
   Container,
@@ -7,11 +8,30 @@ import {
   HStack,
   Button,
   Icon,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
+  useDisclosure,
 } from '@chakra-ui/react'
-import { FaPhone, FaWhatsapp, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaPhone, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaMobileAlt, FaHeadset } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 
+const phoneNumbers = [
+  { label: 'Main Office', number: '+27 12 345 6789', icon: FaHeadset, available: 'Mon-Sat 7AM-6PM' },
+  { label: 'Mobile', number: '+27 82 345 6789', icon: FaMobileAlt, available: 'Available for urgent calls' },
+  { label: 'WhatsApp', number: '+27 72 345 6789', icon: FaWhatsapp, available: 'Text us anytime' },
+]
+
 function Contact() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+
+  const handleCall = (number) => {
+    window.location.href = number.replace(/\s/g, '')
+  }
+
   return (
     <Box id="contact" py={{ base: '60px', md: '100px' }} bg="brand.dark">
       <Container maxW="1200px">
@@ -34,8 +54,7 @@ function Contact() {
               color="brand.dark"
               size="lg"
               px={8}
-              as="a"
-              href="tel:+27123456789"
+              onClick={onOpen}
               _hover={{ bg: 'brand.accent', color: 'white', transform: 'translateY(-3px)' }}
               transition="all 0.3s ease"
             >
@@ -87,6 +106,51 @@ function Contact() {
           </Box>
         </VStack>
       </Container>
+
+      {/* Call Now Modal */}
+      <Modal isOpen={isOpen} onClose={onClose} isCentered>
+        <ModalOverlay bg="blackAlpha.700" backdropFilter="blur(5px)" />
+        <ModalContent bg="brand.dark" border="1px" borderColor="gray.700" borderRadius="xl" mx={4}>
+          <ModalHeader color="white" textAlign="center" pt={8}>
+            <Icon as={FaPhone} color="brand.accent" fontSize="2xl" mb={2} />
+            <Text fontSize="xl" fontWeight="600">Call Us</Text>
+            <Text fontSize="sm" color="gray.400" fontWeight="400" mt={1}>
+              Choose a number to call
+            </Text>
+          </ModalHeader>
+          <ModalCloseButton color="white" />
+          <ModalBody pb={8}>
+            <VStack spacing={4}>
+              {phoneNumbers.map((item, idx) => (
+                <Button
+                  key={idx}
+                  w="100%"
+                  h="auto"
+                  py={4}
+                  px={6}
+                  bg="brand.primary"
+                  color="white"
+                  borderRadius="lg"
+                  onClick={() => handleCall(item.number)}
+                  _hover={{ bg: 'brand.accent', transform: 'translateY(-2px)' }}
+                  transition="all 0.3s ease"
+                  leftIcon={<Icon as={item.icon} color="brand.accent" />}
+                >
+                  <VStack align="flex-start" spacing={0}>
+                    <Text fontWeight="600">{item.label}</Text>
+                    <Text fontSize="lg" fontWeight="700" color="brand.accent">
+                      {item.number}
+                    </Text>
+                    <Text fontSize="xs" color="gray.400" fontWeight="400">
+                      {item.available}
+                    </Text>
+                  </VStack>
+                </Button>
+              ))}
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   )
 }
