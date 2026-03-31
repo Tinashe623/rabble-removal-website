@@ -39,12 +39,7 @@ function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const isHomePage = location.pathname === '/'
-
   const getNavBackground = () => {
-    if (isHomePage) {
-      return scrolled ? 'rgba(26, 26, 26, 0.95)' : 'transparent'
-    }
     return 'rgba(26, 26, 26, 0.95)'
   }
 
@@ -62,7 +57,7 @@ function Navbar() {
     >
       <Box
         bg={getNavBackground()}
-        backdropFilter={isHomePage && scrolled ? 'blur(10px)' : 'none'}
+        backdropFilter="blur(10px)"
         transition="all 0.3s ease"
         boxShadow={scrolled ? 'lg' : 'none'}
       >
