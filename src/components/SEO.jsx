@@ -4,7 +4,7 @@ const SEO = ({
   title = 'Tich Rubble Removal | TLB Hire & Rubble Removal South Africa',
   description = 'Professional rubble removal, site clearing, and TLB hire services across South Africa. Fast, affordable, reliable. Contact us for same-day service.',
   keywords = 'rubble removal, TLB hire, site clearing, waste disposal, Johannesburg, Pretoria, Gauteng',
-  ogImage = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=80',
+  ogImage = '/src/assets/images/hero-image.jpg',
   url = 'https://tichrubble.co.za'
 }) => {
   return (
