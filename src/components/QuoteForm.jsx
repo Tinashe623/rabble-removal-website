@@ -18,7 +18,7 @@ import {
   Icon,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FaPhone, FaWhatsapp, FaClock, FaPaperPlane } from 'react-icons/fa'
+import { FaPhone, FaWhatsapp, FaClock, FaPaperPlane, FaCheck } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 
 const MotionBox = motion(Box)
@@ -26,6 +26,7 @@ const MotionBox = motion(Box)
 function QuoteForm() {
   const toast = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSuccess, setIsSuccess] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -58,9 +59,13 @@ function QuoteForm() {
     if (!validateForm()) return
 
     setIsSubmitting(true)
+    setIsSuccess(false)
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    await new Promise(resolve => setTimeout(resolve, 2000))
+    
+    setIsSubmitting(false)
+    setIsSuccess(true)
     
     toast({
       title: 'Quote Request Sent!',
@@ -71,14 +76,16 @@ function QuoteForm() {
       position: 'top',
     })
     
-    setFormData({
-      name: '',
-      phone: '',
-      location: '',
-      serviceType: '',
-      message: '',
-    })
-    setIsSubmitting(false)
+    setTimeout(() => {
+      setFormData({
+        name: '',
+        phone: '',
+        location: '',
+        serviceType: '',
+        message: '',
+      })
+      setIsSuccess(false)
+    }, 3000)
   }
 
   const handleChange = (e) => {
@@ -201,11 +208,32 @@ function QuoteForm() {
                     variant="primary"
                     size="lg"
                     w="100%"
-                    leftIcon={<FaPaperPlane />}
+                    h="56px"
+                    fontSize="md"
+                    fontWeight="700"
+                    borderRadius="16px"
+                    leftIcon={isSuccess ? <FaCheck /> : <FaPaperPlane />}
                     isLoading={isSubmitting}
                     loadingText="Sending..."
+                    bg={isSuccess ? '#10b981' : 'brand.accent'}
+                    color="white"
+                    position="relative"
+                    overflow="hidden"
+                    transition="all 0.3s ease"
+                    _hover={{
+                      transform: isSuccess ? 'none' : 'translateY(-3px)',
+                      boxShadow: isSuccess ? 'none' : '0 12px 28px rgba(245, 158, 11, 0.4)',
+                    }}
+                    _active={{
+                      transform: 'scale(0.98)',
+                    }}
+                    _disabled={{
+                      bg: 'brand.accent',
+                      opacity: 0.7,
+                    }}
+                    isDisabled={isSubmitting}
                   >
-                    Request Free Quote
+                    {isSuccess ? 'Request Sent!' : 'Request Free Quote'}
                   </Button>
                 </VStack>
               </form>

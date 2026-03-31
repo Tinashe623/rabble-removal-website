@@ -9,7 +9,7 @@ import {
   HStack,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FaTruckLoading, FaLayerGroup, FaTractor, FaRecycle } from 'react-icons/fa'
+import { FaTruckLoading, FaLayerGroup, FaTractor, FaRecycle, FaArrowRight } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 
 const MotionBox = motion(Box)
@@ -37,7 +37,7 @@ const services = [
     icon: FaRecycle,
     title: 'Waste Disposal',
     description: 'Eco-friendly waste disposal solutions. We ensure proper sorting and recycling of materials where possible.',
-    features: [' Licensed disposal', 'Recycling', 'Environmentally safe', 'Proper documentation'],
+    features: ['Licensed disposal', 'Recycling', 'Environmentally safe', 'Proper documentation'],
   },
 ]
 
@@ -56,61 +56,103 @@ function Services() {
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={12}>
           {services.map((service, idx) => (
             <MotionBox
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
+              key={service.title}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.6, delay: idx * 0.15, ease: 'easeOut' }}
             >
               <Box
-                bg="white"
+                bg="rgba(255, 255, 255, 0.65)"
+                backdropFilter="blur(20px)"
                 p={8}
-                borderRadius="8px"
-                boxShadow="0 4px 20px rgba(0,0,0,0.06)"
-                transition="all 0.3s ease"
+                borderRadius="24px"
+                boxShadow="0 8px 32px rgba(0,0,0,0.08)"
+                transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
                 cursor="pointer"
+                position="relative"
+                overflow="hidden"
+                border="1px solid"
+                borderColor="rgba(255, 255, 255, 0.8)"
                 _hover={{
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 12px 30px rgba(0,0,0,0.1)',
+                  transform: 'translateY(-12px) scale(1.02)',
+                  boxShadow: '0 24px 48px rgba(245, 158, 11, 0.2)',
+                  borderColor: 'brand.accent',
+                }}
+                _before={{
+                  content: '""',
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  h: '4px',
+                  bgGradient: 'linear(to-r, brand.accent, #ff8c00)',
                 }}
                 h="100%"
               >
-                <VStack align="flex-start" spacing={4}>
-                  <HStack spacing={4}>
+                <VStack align="flex-start" spacing={5}>
+                  <HStack spacing={5} w="100%">
                     <Box
-                      bg="brand.accent"
-                      p={4}
-                      borderRadius="8px"
+                      position="relative"
+                      bgGradient="linear(to-br, brand.accent, #ff8c00)"
+                      p={5}
+                      borderRadius="16px"
+                      boxShadow="0 8px 24px rgba(245, 158, 11, 0.35)"
                     >
-                      <Icon as={service.icon} color="white" fontSize="2xl" />
+                      <Icon 
+                        as={service.icon} 
+                        color="white" 
+                        fontSize="2xl"
+                      />
                     </Box>
                     <Heading
                       as="h3"
                       fontSize="xl"
-                      fontWeight="600"
+                      fontWeight="700"
                       color="brand.dark"
+                      flex={1}
+                      letterSpacing="-0.5px"
                     >
                       {service.title}
                     </Heading>
                   </HStack>
 
-                  <Text color="gray.600" lineHeight="1.7">
+                  <Text color="gray.600" lineHeight="1.8" fontSize="md">
                     {service.description}
                   </Text>
 
-                  <Box pt={2}>
-                    <Text fontSize="sm" fontWeight="600" color="brand.primary" mb={2}>
+                  <Box pt={3} w="100%">
+                    <Text fontSize="sm" fontWeight="600" color="brand.primary" mb={3}>
                       What's Included:
                     </Text>
-                    <SimpleGrid columns={2} spacing={2}>
+                    <SimpleGrid columns={2} spacing={3}>
                       {service.features.map((feature, fIdx) => (
-                        <HStack key={fIdx} spacing={2}>
-                          <Box w="6px" h="6px" bg="brand.accent" borderRadius="full" />
-                          <Text fontSize="sm" color="gray.500">{feature}</Text>
+                        <HStack key={fIdx} spacing={3}>
+                          <Box 
+                            w="8px" 
+                            h="8px" 
+                            bgGradient="linear(to-r, brand.accent, #ff8c00)" 
+                            borderRadius="full"
+                            flexShrink={0}
+                          />
+                          <Text fontSize="sm" color="gray.600" fontWeight="500">{feature}</Text>
                         </HStack>
                       ))}
                     </SimpleGrid>
                   </Box>
+
+                  <HStack 
+                    color="brand.accent" 
+                    fontSize="sm" 
+                    fontWeight="600"
+                    spacing={3}
+                    pt={2}
+                  >
+                    <Text>Learn more</Text>
+                    <Icon 
+                      as={FaArrowRight} 
+                    />
+                  </HStack>
                 </VStack>
               </Box>
             </MotionBox>

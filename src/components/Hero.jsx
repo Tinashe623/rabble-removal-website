@@ -71,13 +71,45 @@ function Hero() {
       pt={{ base: '80px', md: '90px' }}
       pb={{ base: '60px', lg: 0 }}
     >
+      {/* Animated Pattern Overlay */}
       <Box
         position="absolute"
         top={0}
         left={0}
         right={0}
         bottom={0}
-        bgGradient="linear(to-br, rgba(26,26,26,0.95), rgba(45,45,45,0.85))"
+        zIndex={0}
+        opacity={0.04}
+        backgroundImage="radial-gradient(circle at 20% 30%, #f59e0b 1px, transparent 1px), radial-gradient(circle at 80% 70%, #f59e0b 1px, transparent 1px)"
+        backgroundSize="40px 40px"
+        sx={{
+          animation: 'patternMove 20s linear infinite',
+          '@keyframes patternMove': {
+            '0%': { backgroundPosition: '0% 0%, 0% 0%' },
+            '100%': { backgroundPosition: '40px 40px, 80px 80px' },
+          },
+        }}
+      />
+      
+      {/* Diagonal Lines Pattern */}
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        zIndex={0}
+        opacity={0.02}
+        backgroundImage="repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(245,158,11,0.3) 35px, rgba(245,158,11,0.3) 70px)"
+      />
+
+      <Box
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        bgGradient="linear(to-br, rgba(26,26,26,0.92), rgba(45,45,45,0.82))"
         zIndex={1}
       />
       
@@ -90,7 +122,7 @@ function Hero() {
         bgImage="url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')"
         bgSize="cover"
         bgPosition="center"
-        opacity={0.3}
+        opacity={0.25}
         zIndex={0}
       />
 

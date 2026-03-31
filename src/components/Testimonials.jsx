@@ -1,15 +1,15 @@
 import {
   Box,
   Container,
-  Heading,
   Text,
   SimpleGrid,
   VStack,
   HStack,
   Icon,
+  Avatar,
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
-import { FaQuoteLeft, FaStar } from 'react-icons/fa'
+import { FaStar } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
 
 const MotionBox = motion(Box)
@@ -21,6 +21,7 @@ const testimonials = [
     company: "JHB Construction",
     rating: 5,
     service: "Site Clearing",
+    initials: "MJ",
   },
   {
     quote: "The TLB machine they provided made excavation work so much easier. Operator was skilled and the equipment was well-maintained.",
@@ -28,6 +29,7 @@ const testimonials = [
     company: "Mitchell Builders",
     rating: 5,
     service: "TLB Hire",
+    initials: "SM",
   },
   {
     quote: "Excellent service from start to finish. They removed all the rubble from our home renovation and cleaned up afterwards. Will use again!",
@@ -35,6 +37,7 @@ const testimonials = [
     company: "Homeowner",
     rating: 5,
     service: "Rubble Removal",
+    initials: "DP",
   },
 ]
 
@@ -52,56 +55,53 @@ function Testimonials() {
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8} mt={12}>
           {testimonials.map((testimonial, idx) => (
             <MotionBox
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
+              key={testimonial.author}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
             >
               <Box
-                bg="brand.offWhite"
-                p={8}
-                borderRadius="8px"
-                position="relative"
-                transition="all 0.3s ease"
-                _hover={{
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 12px 30px rgba(0,0,0,0.1)',
-                }}
+                bg="white"
+                p={6}
+                borderRadius="16px"
+                boxShadow="0 4px 20px rgba(0,0,0,0.08)"
+                border="1px solid"
+                borderColor="gray.100"
                 h="100%"
               >
-                <Box position="absolute" top={4} right={4}>
-                  <Icon as={FaQuoteLeft} color="brand.accent" fontSize="3xl" opacity={0.3} />
-                </Box>
+                <HStack spacing={1} mb={3}>
+                  {[...Array(testimonial.rating)].map((_, starIdx) => (
+                    <Icon 
+                      key={starIdx} 
+                      as={FaStar} 
+                      color="yellow.400" 
+                      fontSize="sm"
+                    />
+                  ))}
+                </HStack>
 
-                <VStack align="flex-start" spacing={4}>
-                  <HStack spacing={1}>
-                    {[...Array(testimonial.rating)].map((_, starIdx) => (
-                      <Icon key={starIdx} as={FaStar} color="brand.accent" fontSize="sm" />
-                    ))}
-                  </HStack>
+                <Text color="gray.600" fontSize="md" lineHeight="1.7" mb={4}>
+                  {testimonial.quote}
+                </Text>
 
-                  <Text
-                    color="gray.600"
-                    fontSize="md"
-                    lineHeight="1.7"
-                    fontStyle="italic"
-                  >
-                    "{testimonial.quote}"
-                  </Text>
-
-                  <Box pt={4} borderTop="1px" borderColor="gray.200" w="100%">
-                    <Text fontWeight="600" color="brand.dark">
-                      {testimonial.author}
-                    </Text>
-                    <Text fontSize="sm" color="gray.500">
-                      {testimonial.company}
-                    </Text>
-                    <Text fontSize="xs" color="brand.accent" fontWeight="500" mt={1}>
-                      {testimonial.service}
-                    </Text>
-                  </Box>
-                </VStack>
+                <HStack spacing={3} pt={3} borderTop="1px solid" borderColor="gray.100">
+                      <Avatar 
+                        name={testimonial.author} 
+                        initials={testimonial.initials}
+                        bg="brand.accent"
+                        color="white"
+                        size="sm"
+                      />
+                      <VStack align="flex-start" spacing={0}>
+                        <Text fontWeight="600" color="brand.dark" fontSize="sm">
+                          {testimonial.author}
+                        </Text>
+                        <Text fontSize="xs" color="gray.500">
+                          {testimonial.company}
+                        </Text>
+                      </VStack>
+                </HStack>
               </Box>
             </MotionBox>
           ))}

@@ -50,44 +50,60 @@ function WhyChooseUs() {
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8} mt={12}>
           {features.map((feature, idx) => (
             <MotionBox
-              key={idx}
-              initial={{ opacity: 0, y: 40 }}
+              key={feature.title}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              transition={{ duration: 0.6, delay: idx * 0.1, ease: 'easeOut' }}
             >
               <VStack
-                bg="white"
+                bg="rgba(255, 255, 255, 0.65)"
+                backdropFilter="blur(20px)"
                 p={8}
-                borderRadius="8px"
-                boxShadow="0 4px 20px rgba(0,0,0,0.06)"
-                spacing={4}
+                borderRadius="24px"
+                boxShadow="0 8px 32px rgba(0,0,0,0.08)"
+                spacing={5}
                 textAlign="center"
-                transition="all 0.3s ease"
+                transition="all 0.4s cubic-bezier(0.4, 0, 0.2, 1)"
+                border="1px solid"
+                borderColor="rgba(255, 255, 255, 0.8)"
+                position="relative"
+                overflow="hidden"
                 _hover={{
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 12px 30px rgba(0,0,0,0.1)',
+                  transform: 'translateY(-12px)',
+                  boxShadow: '0 24px 48px rgba(245, 158, 11, 0.18)',
+                  borderColor: 'brand.accent',
                 }}
                 h="100%"
               >
                 <Box
+                  position="relative"
                   bg="brand.dark"
-                  p={4}
+                  p={6}
                   borderRadius="full"
+                  transition="all 0.4s ease"
+                  _hover={{
+                    transform: 'scale(1.15)',
+                  }}
                 >
-                  <Icon as={feature.icon} color="brand.accent" fontSize="2xl" />
+                  <Icon 
+                    as={feature.icon} 
+                    color="brand.accent" 
+                    fontSize="2xl"
+                  />
                 </Box>
                 <Text
-                  fontWeight="600"
+                  fontWeight="700"
                   fontSize="lg"
                   color="brand.dark"
+                  letterSpacing="-0.3px"
                 >
                   {feature.title}
                 </Text>
                 <Text
                   color="gray.500"
                   fontSize="sm"
-                  lineHeight="1.6"
+                  lineHeight="1.7"
                 >
                   {feature.description}
                 </Text>
