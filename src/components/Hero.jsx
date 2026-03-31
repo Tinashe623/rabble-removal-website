@@ -62,11 +62,14 @@ function Hero() {
   return (
     <Box
       position="relative"
-      minH="100vh"
+      h={{ base: 'auto', lg: '100vh' }}
+      minH={{ base: '100vh', lg: '100vh' }}
       display="flex"
       alignItems="center"
       bg="brand.dark"
       overflow="hidden"
+      pt={{ base: '80px', md: '90px' }}
+      pb={{ base: '60px', lg: 0 }}
     >
       <Box
         position="absolute"
@@ -101,7 +104,16 @@ function Hero() {
         zIndex={1}
       />
 
-      <Container maxW="1200px" position="relative" zIndex={2} pt={{ base: '80px', md: 0 }}>
+      <Container 
+        maxW="1200px" 
+        position="relative" 
+        zIndex={2} 
+        pt={{ base: '20px', lg: 0 }}
+        pb={{ lg: '80px' }}
+        h={{ base: 'auto', lg: '100%' }}
+        display="flex"
+        alignItems={{ base: 'flex-start', lg: 'center' }}
+      >
         <MotionFlex
           variants={containerVariants}
           initial="hidden"
@@ -172,6 +184,7 @@ function Hero() {
                 px={6}
                 leftIcon={<FaPhone size={14} />}
                 onClick={onOpen}
+                display={{ base: 'none', md: 'flex' }}
               >
                 Call Now
               </Button>
@@ -184,6 +197,7 @@ function Hero() {
                 as="a"
                 href="https://wa.me/27123456789?text=Hi, I need rubble removal services"
                 _hover={{ bg: '#128C7E', transform: 'translateY(-3px)' }}
+                display={{ base: 'none', md: 'flex' }}
               >
                 WhatsApp
               </Button>

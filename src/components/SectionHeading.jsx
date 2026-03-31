@@ -53,13 +53,56 @@ function SectionHeading({ title, subtitle, alignment = 'left', highlightWord = n
       >
         {highlightWord ? renderHighlightedTitle() : title}
       </Heading>
-      <Box
-        w="80px"
-        h="4px"
-        bgGradient="linear(to-r, brand.accent, #ff8c00)"
-        borderRadius="2px"
-        mx={alignment === 'center' ? 'auto' : 0}
-      />
+      
+      {/* Modern Arrow Divider */}
+      <Box position="relative" h="20px" w="80px" mx={alignment === 'center' ? 'auto' : 0}>
+        {/* Left line */}
+        <Box
+          position="absolute"
+          top="50%"
+          left={0}
+          w="30px"
+          h="2px"
+          bgGradient="linear(to-r, transparent, brand.accent)"
+          borderRadius="full"
+        />
+        {/* Arrow center dot */}
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          w="8px"
+          h="8px"
+          bg="brand.accent"
+          borderRadius="full"
+        />
+        {/* Right line */}
+        <Box
+          position="absolute"
+          top="50%"
+          right={0}
+          w="30px"
+          h="2px"
+          bgGradient="linear(to-l, transparent, brand.accent)"
+          borderRadius="full"
+        />
+        {/* Arrow pointer */}
+        <Box
+          position="absolute"
+          top="50%"
+          left="50%"
+          transform="translate(-50%, -50%)"
+          w={0}
+          h={0}
+          borderLeft="6px solid transparent"
+          borderRight="6px solid transparent"
+          borderTop="8px solid"
+          borderTopColor="brand.accent"
+          mt="2px"
+        />
+      </Box>
+      
       {subtitle && (
         <Text
           fontSize={{ base: 'md', md: 'lg' }}

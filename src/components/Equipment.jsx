@@ -89,13 +89,14 @@ function Equipment() {
                     position="absolute"
                     top={4}
                     right={4}
-                    bg="brand.accent"
+                    bgGradient="linear(to-r, brand.accent, #ff8c00)"
                     color="white"
-                    px={3}
-                    py={1}
-                    borderRadius="4px"
+                    px={4}
+                    py={2}
+                    borderRadius="full"
                     fontSize="sm"
                     fontWeight="600"
+                    boxShadow="0 4px 15px rgba(245, 158, 11, 0.4)"
                   >
                     {item.capacity}
                   </Badge>
@@ -115,7 +116,7 @@ function Equipment() {
                     {item.description}
                   </Text>
 
-                  <Box pt={2}>
+                   <Box pt={2}>
                     <Text fontSize="xs" fontWeight="600" color="brand.primary" mb={2} textTransform="uppercase" letterSpacing="0.5px">
                       Best For:
                     </Text>
@@ -123,19 +124,25 @@ function Equipment() {
                       {item.useCases.map((useCase, uIdx) => (
                         <Badge
                           key={uIdx}
-                          bg="brand.dark"
+                          bgGradient="linear(to-r, brand.dark, brand.primary)"
                           color="white"
-                          px={2}
+                          px={3}
                           py={1}
-                          borderRadius="4px"
+                          borderRadius="full"
                           fontSize="xs"
                           fontWeight="500"
+                          transition="all 0.3s ease"
+                          _hover={{
+                            bgGradient: 'linear(to-r, brand.accent, #ff8c00)',
+                            transform: 'translateY(-2px)',
+                          }}
+                          cursor="pointer"
                         >
                           {useCase}
                         </Badge>
                       ))}
                     </HStack>
-                  </Box>
+                   </Box>
                 </VStack>
               </Box>
             </MotionBox>
