@@ -5,6 +5,7 @@ import Equipment from '../components/Equipment'
 import WhyChooseUs from '../components/WhyChooseUs'
 import Testimonials from '../components/Testimonials'
 import FAQ from '../components/FAQ'
+import QuoteForm from '../components/QuoteForm'
 import SEO from '../components/SEO'
 
 function Home() {
@@ -21,6 +22,7 @@ function Home() {
       <WhyChooseUs />
       <Testimonials />
       <FAQ />
+      <QuoteForm />
     </Box>
   )
 }
