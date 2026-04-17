@@ -71,7 +71,7 @@ function Navbar() {
           justify="space-between"
            h={{ base: '70px', md: '70px' }}
         >
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/" style={{ textDecoration: 'none' }} onClick={() => window.scrollTo(0, 0)}>
             <HStack spacing={3} align="center">
               <Image
                 src="/logo.png"
@@ -101,6 +101,7 @@ function Navbar() {
                 key={link.label}
                 to={link.path}
                 style={{ textDecoration: 'none' }}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 <Box
                   color={location.pathname === link.path ? 'brand.accent' : 'white'}
@@ -138,6 +139,7 @@ function Navbar() {
               size="sm"
               as={Link}
               to="/quote"
+              onClick={() => window.scrollTo(0, 0)}
             >
               Get Quote
             </Button>
@@ -165,7 +167,7 @@ function Navbar() {
                   key={link.label}
                   to={link.path}
                   style={{ textDecoration: 'none' }}
-                  onClick={onClose}
+                  onClick={() => { window.scrollTo(0, 0); onClose(); }}
                 >
                   <Box
                     color="white"
@@ -184,7 +186,7 @@ function Navbar() {
                 mt={4}
                 as={Link}
                 to="/quote"
-                onClick={onClose}
+                onClick={() => { window.scrollTo(0, 0); onClose(); }}
               >
                 Get Quote
               </Button>
