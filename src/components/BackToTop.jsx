@@ -46,7 +46,7 @@ function BackToTop() {
             aria-label="Back to top"
             icon={<FaArrowUp />}
             onClick={scrollToTop}
-            size="lg"
+            size={{ base: "md", md: "lg" }}
             bg={useColorModeValue('brand.accent', 'brand.accent')}
             color="white"
             borderRadius="full"
