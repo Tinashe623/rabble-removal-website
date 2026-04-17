@@ -99,8 +99,8 @@ function Hero() {
         right={0}
         bottom={0}
         zIndex={0}
-        opacity={0.02}
-        backgroundImage="repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(245,158,11,0.3) 35px, rgba(245,158,11,0.3) 70px)"
+        opacity={0.06}
+        backgroundImage="repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(245,158,11,0.6) 35px, rgba(245,158,11,0.6) 70px)"
       />
 
       <Box
