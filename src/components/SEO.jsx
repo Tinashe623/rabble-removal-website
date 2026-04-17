@@ -4,7 +4,7 @@ const SEO = ({
   title = 'Exquisite Energies | TLB Hire & Rubble Removal South Africa',
   description = 'Professional rubble removal, site clearing, and TLB hire services across South Africa. Fast, affordable, reliable. Contact us for same-day service.',
   keywords = 'rubble removal, TLB hire, site clearing, waste disposal, Johannesburg, Pretoria, Gauteng',
-  ogImage = '/src/assets/images/hero-image.jpg',
+  ogImage = '/logo.png',
   url = 'https://tichrubble.co.za'
 }) => {
   return (
