@@ -43,7 +43,7 @@ function MobileQuickCall() {
         color="white"
         size="md"
         as="a"
-        href="https://wa.me/27123456789?text=Hi, I need rubble removal services"
+          href="https://wa.me/27846666978?text=Hi, I need rubble removal services"
         fontWeight="600"
         _hover={{ bg: '#128C7E' }}
       >

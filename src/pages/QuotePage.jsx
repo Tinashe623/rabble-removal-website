@@ -307,7 +307,7 @@ function QuotePage() {
                       </Box>
                       <VStack align="flex-start" spacing={0}>
                         <Text fontWeight="600" color="brand.dark">WhatsApp</Text>
-                        <Text color="gray.500" as="a" href="https://wa.me/27123456789">Chat on WhatsApp</Text>
+                        <Text color="gray.500" as="a" href="https://wa.me/27846666978">Chat on WhatsApp</Text>
                       </VStack>
                     </HStack>
 
@@ -386,7 +386,7 @@ function QuotePage() {
                     size="lg"
                     flex={1}
                     as="a"
-                    href="https://wa.me/27123456789?text=Hi, I need rubble removal services"
+                     href="https://wa.me/27846666978?text=Hi, I need rubble removal services"
                     _hover={{ bg: '#128C7E' }}
                   >
                     WhatsApp

@@ -177,7 +177,7 @@ function Footer() {
             <HStack spacing={3}>
               <Icon as={FaWhatsapp} color="#25D366" fontSize="sm" />
               <ChakraLink
-                href="https://wa.me/27123456789"
+                 href="https://wa.me/27846666978"
                 color="gray.400"
                 fontSize="sm"
                 fontWeight="500"

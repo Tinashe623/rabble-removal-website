@@ -19,7 +19,7 @@ function FloatingWhatsApp() {
       >
         <IconButton
           as="a"
-          href="https://wa.me/27123456789?text=Hi, I need rubble removal services"
+          href="https://wa.me/27846666978?text=Hi, I need rubble removal services"
           aria-label="Chat on WhatsApp"
           icon={<FaWhatsapp size={24} />}
           bg="#25D366"
