@@ -49,7 +49,7 @@ const contactMethods = [
   {
     icon: FaEnvelope,
     label: 'Email',
-    value: 'info@tichrubble.co.za',
+    value: 'exerstel@gmail.com',
     description: 'We reply within 24hrs',
     action: 'email',
     color: 'brand.accent',
@@ -64,11 +64,11 @@ function Contact() {
   }
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/27123456789?text=Hi, I need rubble removal services', '_blank')
+    window.open('https://wa.me/27846666978?text=Hi, I need rubble removal services', '_blank')
   }
 
   const handleEmail = () => {
-    window.location.href = 'mailto:info@tichrubble.co.za'
+    window.location.href = 'mailto:exerstel@gmail.com'
   }
 
   const handleAction = (action) => {

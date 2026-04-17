@@ -26,7 +26,7 @@ const footerLinks = {
   contact: [
     { label: '+27 84 666 6978', isContact: true, href: 'tel:+27846666978' },
     { label: '+27 84 666 6978', isWhatsApp: true, href: 'https://wa.me/27846666978' },
-    { label: 'info@tichrubble.co.za', isEmail: true, href: 'mailto:info@tichrubble.co.za' },
+    { label: 'exerstel@gmail.com', isEmail: true, href: 'mailto:exerstel@gmail.com' },
   ],
 }
 
@@ -56,7 +56,7 @@ function Footer() {
               fontWeight="bold"
               letterSpacing="-0.5px"
             >
-              TICH<span style={{ color: '#f59e0b' }}>.</span>
+              EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
             </Text>
             <Text color="gray.400" fontSize="sm" lineHeight="1.8">
               Professional rubble removal and TLB hire services across South Africa. 
@@ -180,14 +180,14 @@ function Footer() {
             <HStack spacing={3}>
               <Icon as={FaEnvelope} color="brand.accent" fontSize="sm" />
               <ChakraLink
-                href="mailto:info@tichrubble.co.za"
+                href="mailto:exerstel@gmail.com"
                 color="gray.400"
                 fontSize="sm"
                 fontWeight="500"
                 _hover={{ color: 'brand.accent' }}
                 transition="color 0.3s ease"
               >
-                info@tichrubble.co.za
+                exerstel@gmail.com
               </ChakraLink>
             </HStack>
             <HStack spacing={3}>
@@ -203,7 +203,7 @@ function Footer() {
 
         <HStack justify="space-between" flexWrap="wrap" spacing={4}>
           <Text color="gray.500" fontSize="sm" fontWeight="500">
-            © 2024 Exquisite Energies. All rights reserved.
+            © 2026 Exquisite Energies. All rights reserved.
           </Text>
 
           <HStack spacing={6}>
@@ -229,6 +229,18 @@ function Footer() {
             </ChakraLink>
           </HStack>
         </HStack>
+
+        <Text color="gray.600" fontSize="xs" textAlign="center" mt={4}>
+          Designed and developed by{' '}
+          <ChakraLink
+            href="https://tinashe-mundieta.vercel.app"
+            color="brand.accent"
+            _hover={{ textDecoration: 'underline' }}
+            isExternal
+          >
+            Tinashe Web Solutions
+          </ChakraLink>
+        </Text>
       </Container>
     </Box>
   )

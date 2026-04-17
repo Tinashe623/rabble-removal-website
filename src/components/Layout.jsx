@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import FloatingWhatsApp from './FloatingWhatsApp'
-import MobileQuickCall from './MobileQuickCall'
+// import MobileQuickCall from './MobileQuickCall'
 
 function Layout() {
   return (
@@ -14,7 +14,7 @@ function Layout() {
       </Box>
       <Footer />
       <FloatingWhatsApp />
-      <MobileQuickCall />
+      {/* <MobileQuickCall /> */}
     </Box>
   )
 }

@@ -48,11 +48,13 @@ const SEO = ({
           "name": "Exquisite Energies",
           "description": "Professional rubble removal and TLB hire services",
           "telephone": "+27846666978",
-          "email": "info@tichrubble.co.za",
+          "email": "exerstel@gmail.com",
           "address": {
             "@type": "PostalAddress",
-            "addressLocality": "Johannesburg",
-            "addressRegion": "Gauteng",
+            "streetAddress": "91 Dalmation place",
+            "addressLocality": "Midrand",
+            "addressRegion": "GP",
+            "postalCode": "1685",
             "addressCountry": "ZA"
           },
           "openingHours": "Mo-Sa 07:00-18:00",
