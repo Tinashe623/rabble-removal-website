@@ -11,6 +11,10 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import SectionHeading from './SectionHeading'
+import image5 from '../assets/images/image5.jpg'
+import image1 from '../assets/images/image1.jpg'
+import image2 from '../assets/images/image2.jpg'
+import image4 from '../assets/images/image4.jpg'
 
 const MotionBox = motion(Box)
 
@@ -19,28 +23,28 @@ const equipment = [
     name: '8-Ton Tipper Truck',
     capacity: '8 m³',
     description: 'Heavy-duty tipper truck ideal for large rubble removal jobs. High sides and powerful hydraulic system for efficient loading and unloading.',
-    image: '/src/assets/images/image5.jpg',
+    image: image5,
     useCases: ['Large construction sites', 'Bulk rubble removal', 'Heavy loads'],
   },
   {
     name: '6-Ton Tipper Truck',
     capacity: '6 m³',
     description: 'Versatile tipper truck perfect for medium-sized projects. Manoeuvrable yet powerful for most residential and commercial jobs.',
-    image: '/src/assets/images/image1.jpg',
+    image: image1,
     useCases: ['Residential projects', 'Garden clearance', 'Medium loads'],
   },
   {
     name: 'TLB 4x4 Machine',
     capacity: '1.2 m³ Bucket',
     description: 'All-terrain Tractor-Loader-Backhoe with 4x4 drive. Excellent for excavation, trenching, and loading in challenging conditions.',
-    image: '/src/assets/images/image2.jpg',
+    image: image2,
     useCases: ['Excavation work', 'Trenching', 'Rough terrain'],
   },
   {
     name: 'TLB 4x2 Machine',
     capacity: '1.0 m³ Bucket',
     description: 'Cost-effective TLB option for standard site work. Reliable performance for digging, loading, and backhoe operations.',
-    image: '/src/assets/images/image4.jpg',
+    image: image4,
     useCases: ['Standard excavation', 'Site prep', 'Budget projects'],
   },
 ]

@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 import { FaArrowRight } from 'react-icons/fa'
 import SectionHeading from '../components/SectionHeading'
 import SEO from '../components/SEO'
+import image5 from '../assets/images/image5.jpg'
+import image1 from '../assets/images/image1.jpg'
+import image2 from '../assets/images/image2.jpg'
+import image4 from '../assets/images/image4.jpg'
+import image3 from '../assets/images/image3.jpg'
+import image6 from '../assets/images/image6.jpg'
 
 const MotionBox = motion(Box)
 
@@ -12,7 +18,7 @@ const equipment = [
     name: '8-Ton Tipper Truck',
     capacity: '8 m³',
     description: 'Heavy-duty tipper truck ideal for large rubble removal jobs. High sides and powerful hydraulic system for efficient loading and unloading.',
-    image: '/src/assets/images/image5.jpg',
+    image: image5,
     useCases: ['Large construction sites', 'Bulk rubble removal', 'Heavy loads'],
     specs: ['8 Ton Capacity', '8 m³ Volume', 'Hydraulic Tip'],
   },
@@ -20,7 +26,7 @@ const equipment = [
     name: '6-Ton Tipper Truck',
     capacity: '6 m³',
     description: 'Versatile tipper truck perfect for medium-sized projects. Manoeuvrable yet powerful for most residential and commercial jobs.',
-    image: '/src/assets/images/image1.jpg',
+    image: image1,
     useCases: ['Residential projects', 'Garden clearance', 'Medium loads'],
     specs: ['6 Ton Capacity', '6 m³ Volume', 'Manoeuverable'],
   },
@@ -28,7 +34,7 @@ const equipment = [
     name: 'TLB 4x4 Machine',
     capacity: '1.2 m³ Bucket',
     description: 'All-terrain Tractor-Loader-Backhoe with 4x4 drive. Excellent for excavation, trenching, and loading in challenging conditions.',
-    image: '/src/assets/images/image2.jpg',
+    image: image2,
     useCases: ['Excavation work', 'Trenching', 'Rough terrain'],
     specs: ['4x4 Drive', '1.2 m³ Bucket', 'All-terrain'],
   },
@@ -36,7 +42,7 @@ const equipment = [
     name: 'TLB 4x2 Machine',
     capacity: '1.0 m³ Bucket',
     description: 'Cost-effective TLB option for standard site work. Reliable performance for digging, loading, and backhoe operations.',
-    image: '/src/assets/images/image4.jpg',
+    image: image4,
     useCases: ['Standard excavation', 'Site prep', 'Budget projects'],
     specs: ['4x2 Drive', '1.0 m³ Bucket', 'Cost-effective'],
   },
@@ -44,7 +50,7 @@ const equipment = [
     name: 'Skip Loader',
     capacity: '3 m³',
     description: 'Compact loader perfect for tight spaces and smaller projects. Great for precision work in residential areas.',
-    image: '/src/assets/images/image3.jpg',
+    image: image3,
     useCases: ['Residential work', 'Tight spaces', 'Small loads'],
     specs: ['Compact Size', '3 m³ Capacity', 'Precision Work'],
   },
@@ -52,7 +58,7 @@ const equipment = [
     name: 'Mini TLB',
     capacity: '0.6 m³',
     description: 'Compact TLB for residential projects and confined spaces. Easy to transport and operate in urban areas.',
-    image: '/src/assets/images/image6.jpg',
+    image: image6,
     useCases: ['Home projects', 'Urban sites', 'Small excavation'],
     specs: ['Mini Size', '0.6 m³ Bucket', 'Easy Transport'],
   },

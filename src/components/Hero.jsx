@@ -18,6 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { FaTruck, FaPhone, FaWhatsapp, FaCheckCircle, FaMobileAlt, FaHeadset } from 'react-icons/fa'
+import heroImage from '../assets/images/hero-image.jpg'
 
 const MotionBox = motion(Box)
 const MotionFlex = motion(Flex)
@@ -119,7 +120,7 @@ function Hero() {
         left={0}
         right={0}
         bottom={0}
-        bgImage="url('/src/assets/images/hero-image.jpg')"
+        bgImage={`url(${heroImage})`}
         bgSize="cover"
         bgPosition="center 20%"
         opacity={0.9}
