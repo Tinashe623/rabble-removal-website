@@ -68,7 +68,7 @@ function Navbar() {
           py={3}
           align="center"
           justify="space-between"
-          h={{ base: '60px', md: '70px' }}
+           h={{ base: '70px', md: '70px' }}
         >
           <Link to="/" style={{ textDecoration: 'none' }}>
             <Box
