@@ -103,6 +103,7 @@ function QuoteForm() {
           title="Request a Quote"
           subtitle="Get a free, no-obligation quote for your project"
           alignment="center"
+          highlightWord="Quote"
         />
 
         <MotionBox
