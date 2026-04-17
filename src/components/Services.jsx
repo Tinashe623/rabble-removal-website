@@ -7,7 +7,15 @@ import {
   VStack,
   Icon,
   HStack,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalCloseButton,
 } from '@chakra-ui/react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { FaTruckLoading, FaLayerGroup, FaTractor, FaRecycle, FaArrowRight } from 'react-icons/fa'
 import SectionHeading from './SectionHeading'
@@ -20,28 +28,40 @@ const services = [
     title: 'Rubble Removal',
     description: 'Efficient debris and waste removal for construction sites, renovations, and clearances. We handle all types of rubble with proper disposal.',
     features: ['Construction debris', 'Garden waste', 'Old concrete', 'Soil removal'],
+    details: 'Our rubble removal service covers everything from small renovation projects to large-scale construction site clearances. We use specialized trucks and equipment to safely transport and dispose of all types of construction waste, including concrete, bricks, soil, and general debris. All waste is disposed of at licensed facilities in compliance with environmental regulations.',
   },
   {
     icon: FaLayerGroup,
     title: 'Site Clearing',
     description: 'Complete site preparation services for construction projects. From rough clearing to final grading, we prepare your site for building.',
     features: ['Land clearing', 'Grading', 'Leveling', 'Vegetation removal'],
+    details: 'Site clearing is essential for any construction project. Our team handles the removal of trees, shrubs, rocks, and other obstacles to prepare your land for building. We also provide grading and leveling services to ensure your site meets the required specifications. All work is done with minimal environmental impact.',
   },
   {
     icon: FaTractor,
     title: 'TLB Hire',
     description: 'Tractor-Loader-Backhoe machine rental with experienced operators. Perfect for excavation, trenching, and loading tasks.',
     features: ['Experienced operators', 'Flexible hiring', 'All-terrain', 'Multiple sizes'],
+    details: 'Our TLB hire service provides you with access to high-quality tractor-loader-backhoe machines operated by certified professionals. Whether you need excavation, trenching, loading, or general earthmoving, our fleet is equipped to handle the job. Daily, weekly, or monthly rentals available with competitive rates.',
   },
   {
     icon: FaRecycle,
     title: 'Waste Disposal',
     description: 'Eco-friendly waste disposal solutions. We ensure proper sorting and recycling of materials where possible.',
     features: ['Licensed disposal', 'Recycling', 'Environmentally safe', 'Proper documentation'],
+    details: 'We prioritize environmental responsibility in all our waste disposal operations. Materials are sorted for recycling where possible, and all disposal is carried out at licensed facilities. We provide full documentation for compliance purposes and ensure that hazardous materials are handled safely and legally.',
   },
 ]
 
 function Services() {
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [selectedService, setSelectedService] = React.useState(null)
+
+  const handleLearnMore = (service) => {
+    setSelectedService(service)
+    onOpen()
+  }
+
   return (
     <Box id="services" py={{ base: '60px', md: '100px' }} bg="brand.offWhite">
       <Container maxW="1200px">
@@ -141,16 +161,20 @@ function Services() {
                     </SimpleGrid>
                   </Box>
 
-                  <HStack 
-                    color="brand.accent" 
-                    fontSize="sm" 
+                  <HStack
+                    color="brand.accent"
+                    fontSize="sm"
                     fontWeight="600"
                     spacing={3}
                     pt={2}
+                    cursor="pointer"
+                    onClick={() => handleLearnMore(service)}
+                    _hover={{ color: 'brand.dark' }}
+                    transition="color 0.2s ease"
                   >
                     <Text>Learn more</Text>
-                    <Icon 
-                      as={FaArrowRight} 
+                    <Icon
+                      as={FaArrowRight}
                     />
                   </HStack>
                 </VStack>
@@ -159,6 +183,63 @@ function Services() {
           ))}
         </SimpleGrid>
       </Container>
+
+      <Modal isOpen={isOpen} onClose={onClose} isCentered size="lg">
+        <ModalOverlay bg="blackAlpha.700" backdropFilter="blur(5px)" />
+        <ModalContent bg="brand.dark" border="1px" borderColor="gray.700" borderRadius="xl" mx={4}>
+          <ModalHeader color="white" textAlign="center" pt={8}>
+            <HStack spacing={4} justify="center" mb={4}>
+              <Box
+                bgGradient="linear(to-br, brand.accent, #ff8c00)"
+                p={3}
+                borderRadius="12px"
+              >
+                <Icon as={selectedService?.icon} color="white" fontSize="xl" />
+              </Box>
+              <Text fontSize="2xl" fontWeight="700" color="white">
+                {selectedService?.title}
+              </Text>
+            </HStack>
+          </ModalHeader>
+          <ModalCloseButton color="white" />
+          <ModalBody pb={8} px={8}>
+            <VStack spacing={6} align="stretch">
+              <Text color="gray.300" fontSize="md" lineHeight="1.7">
+                {selectedService?.description}
+              </Text>
+
+              <Box>
+                <Text fontSize="lg" fontWeight="600" color="brand.accent" mb={4}>
+                  What's Included:
+                </Text>
+                <SimpleGrid columns={2} spacing={3}>
+                  {selectedService?.features.map((feature, fIdx) => (
+                    <HStack key={fIdx} spacing={3}>
+                      <Box
+                        w="8px"
+                        h="8px"
+                        bgGradient="linear(to-r, brand.accent, #ff8c00)"
+                        borderRadius="full"
+                        flexShrink={0}
+                      />
+                      <Text fontSize="sm" color="gray.300" fontWeight="500">{feature}</Text>
+                    </HStack>
+                  ))}
+                </SimpleGrid>
+              </Box>
+
+              <Box>
+                <Text fontSize="lg" fontWeight="600" color="brand.accent" mb={4}>
+                  Detailed Information:
+                </Text>
+                <Text color="gray.300" fontSize="sm" lineHeight="1.7">
+                  {selectedService?.details}
+                </Text>
+              </Box>
+            </VStack>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </Box>
   )
 }
