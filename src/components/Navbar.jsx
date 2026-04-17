@@ -15,6 +15,7 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
+import { Image } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 
 const MotionBox = motion(Box)
@@ -71,16 +72,27 @@ function Navbar() {
            h={{ base: '70px', md: '70px' }}
         >
           <Link to="/" style={{ textDecoration: 'none' }}>
-            <Box
-              fontFamily="heading"
-              fontSize={{ base: 'xl', md: '2xl' }}
-              color="white"
-              fontWeight="bold"
-              _hover={{ color: 'brand.accent' }}
-              transition="color 0.3s ease"
-            >
-              EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
-            </Box>
+            <HStack spacing={3} align="center">
+              <Image
+                src="/logo.png"
+                alt="Exquisite Energies Logo"
+                h={{ base: '50px', md: '60px' }}
+                w={{ base: '50px', md: '60px' }}
+                objectFit="contain"
+                _hover={{ opacity: 0.8 }}
+                transition="opacity 0.3s ease"
+              />
+              <Box
+                fontFamily="heading"
+                fontSize={{ base: 'lg', md: 'xl' }}
+                color="white"
+                fontWeight="bold"
+                _hover={{ color: 'brand.dark' }}
+                transition="color 0.3s ease"
+              >
+                EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
+              </Box>
+            </HStack>
           </Link>
 
           <HStack spacing={8} display={{ base: 'none', md: 'flex' }}>

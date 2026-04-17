@@ -8,6 +8,7 @@ import {
   Link as ChakraLink,
   Icon,
   Divider,
+  Image,
 } from '@chakra-ui/react'
 import { FaPhone, FaWhatsapp, FaEnvelope, FaFacebook, FaInstagram, FaLinkedin, FaMapMarkerAlt } from 'react-icons/fa'
 
@@ -49,15 +50,24 @@ function Footer() {
       <Container maxW="1200px" px={{ base: 4, md: 8 }} position="relative">
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={10} mb={12}>
           <VStack align="flex-start" spacing={5}>
-            <Text
-              fontFamily="heading"
-              fontSize="2xl"
-              color="white"
-              fontWeight="bold"
-              letterSpacing="-0.5px"
-            >
-              EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
-            </Text>
+            <HStack spacing={3} align="center">
+              <Image
+                src="/logo.png"
+                alt="Exquisite Energies Logo"
+                h="60px"
+                w="60px"
+                objectFit="contain"
+              />
+              <Text
+                fontFamily="heading"
+                fontSize="xl"
+                color="white"
+                fontWeight="bold"
+                letterSpacing="-0.5px"
+              >
+                EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
+              </Text>
+            </HStack>
             <Text color="gray.400" fontSize="sm" lineHeight="1.8">
               Professional rubble removal and TLB hire services across South Africa. 
               Fast, reliable, and affordable.
