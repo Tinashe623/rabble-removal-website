@@ -146,6 +146,7 @@ function Contact() {
                       alignItems="center"
                       justifyContent="center"
                       position="relative"
+                      flexShrink={0}
                     >
                       <Box
                         position="absolute"
@@ -178,15 +179,20 @@ function Contact() {
                       </Text>
                     </VStack>
 
-                    <HStack 
-                      spacing={2} 
-                      color={method.color}
-                      fontSize="sm"
-                      fontWeight="500"
-                      opacity={0}
-                      _groupHover={{ opacity: 1 }}
-                      transition="all 0.3s ease"
-                    >
+              <HStack
+                spacing={3}
+                justify="center"
+              >
+                <Box
+                  w="48px"
+                  h="48px"
+                  borderRadius="full"
+                  bg="brand.accent"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  flexShrink={0}
+                >
                       <Text>Get in touch</Text>
                       <Icon as={FaArrowRight} />
                     </HStack>

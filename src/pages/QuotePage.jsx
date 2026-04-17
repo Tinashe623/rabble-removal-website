@@ -274,8 +274,17 @@ function QuotePage() {
                     </Heading>
 
                     <HStack spacing={4}>
-                      <Box bg="brand.accent" p={3} borderRadius="full">
-                        <Icon as={FaPhone} color="white" />
+                      <Box
+                        w="56px"
+                        h="56px"
+                        bg="brand.accent"
+                        borderRadius="full"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        flexShrink={0}
+                      >
+                        <Icon as={FaPhone} color="white" fontSize="24px" />
                       </Box>
                       <VStack align="flex-start" spacing={0}>
                         <Text fontWeight="600" color="brand.dark">Phone</Text>
@@ -284,8 +293,17 @@ function QuotePage() {
                     </HStack>
 
                     <HStack spacing={4}>
-                      <Box bg="#25D366" p={3} borderRadius="full">
-                        <Icon as={FaWhatsapp} color="white" />
+                      <Box
+                        w="56px"
+                        h="56px"
+                        bg="#25D366"
+                        borderRadius="full"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        flexShrink={0}
+                      >
+                        <Icon as={FaWhatsapp} color="white" fontSize="24px" />
                       </Box>
                       <VStack align="flex-start" spacing={0}>
                         <Text fontWeight="600" color="brand.dark">WhatsApp</Text>
@@ -294,8 +312,17 @@ function QuotePage() {
                     </HStack>
 
                     <HStack spacing={4}>
-                      <Box bg="brand.dark" p={3} borderRadius="full">
-                        <Icon as={FaClock} color="white" />
+                      <Box
+                        w="56px"
+                        h="56px"
+                        bg="brand.dark"
+                        borderRadius="full"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        flexShrink={0}
+                      >
+                        <Icon as={FaClock} color="white" fontSize="24px" />
                       </Box>
                       <VStack align="flex-start" spacing={0}>
                         <Text fontWeight="600" color="brand.dark">Business Hours</Text>
@@ -305,8 +332,17 @@ function QuotePage() {
                     </HStack>
 
                     <HStack spacing={4}>
-                      <Box bg="brand.accent" p={3} borderRadius="full">
-                        <Icon as={FaMapMarkerAlt} color="white" />
+                      <Box
+                        w="56px"
+                        h="56px"
+                        bg="brand.accent"
+                        borderRadius="full"
+                        display="flex"
+                        alignItems="center"
+                        justifyContent="center"
+                        flexShrink={0}
+                      >
+                        <Icon as={FaMapMarkerAlt} color="white" fontSize="24px" />
                       </Box>
                       <VStack align="flex-start" spacing={0}>
                         <Text fontWeight="600" color="brand.dark">Service Area</Text>
