@@ -33,8 +33,13 @@ function LoadingSpinner() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
+          px={4}
         >
-          <VStack spacing={8} textAlign="center">
+          <VStack 
+            spacing={{ base: 6, md: 8 }} 
+            textAlign="center" 
+            maxW={{ base: "90%", md: "600px" }}
+          >
             <motion.div
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
@@ -43,23 +48,25 @@ function LoadingSpinner() {
               <Image
                 src="/logo.png"
                 alt="Exquisite Energies Logo"
-                h="120px"
-                w="120px"
+                h={{ base: "80px", md: "120px" }}
+                w={{ base: "80px", md: "120px" }}
                 objectFit="contain"
               />
             </motion.div>
 
-            <VStack spacing={4}>
+            <VStack spacing={{ base: 3, md: 4 }}>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <Text
-                  fontSize="2xl"
+                  fontSize={{ base: "lg", sm: "xl", md: "2xl" }}
                   fontWeight="bold"
                   color="white"
                   fontFamily="heading"
+                  px={{ base: 2, md: 0 }}
+                  lineHeight="1.2"
                 >
                   Welcome to Exquisite Energies
                 </Text>
@@ -70,7 +77,12 @@ function LoadingSpinner() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
               >
-                <Text color="gray.300" fontSize="lg">
+                <Text 
+                  color="gray.300" 
+                  fontSize={{ base: "sm", md: "lg" }}
+                  px={{ base: 4, md: 0 }}
+                  lineHeight="1.5"
+                >
                   Professional Energy Solutions for South Africa
                 </Text>
               </motion.div>
@@ -82,7 +94,7 @@ function LoadingSpinner() {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <Spinner
-                size="xl"
+                size={{ base: "md", md: "xl" }}
                 color="brand.accent"
                 thickness="4px"
                 speed="0.8s"
