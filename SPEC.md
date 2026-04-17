@@ -1,7 +1,7 @@
-# Tich Rubble Removal - Website Specification
+# Exquisite Energies - Website Specification
 
 ## Project Overview
-- **Project Name**: Tich Rubble Removal Website
+- **Project Name**: Exquisite Energies Website
 - **Type**: Single-page React website
 - **Core Functionality**: Professional landing page for a South Africa-based rubble removal company with lead generation focus
 - **Target Users**: Homeowners, contractors, construction companies needing rubble removal and TLB hire services in South Africa

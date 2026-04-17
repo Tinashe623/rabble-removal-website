@@ -93,7 +93,7 @@ function QuotePage() {
   return (
     <Box pt="70px">
       <SEO 
-        title="Get a Free Quote | Tich Rubble Removal"
+        title="Get a Free Quote | Exquisite Energies"
         description="Request a free quote for rubble removal, TLB hire, or site clearing services. We respond within 24 hours. Call us or fill out the form today!"
         keywords="get quote, rubble removal quote, TLB hire quote, contact us, request quote"
       />
@@ -288,7 +288,7 @@ function QuotePage() {
                       </Box>
                       <VStack align="flex-start" spacing={0}>
                         <Text fontWeight="600" color="brand.dark">Phone</Text>
-                        <Text color="gray.500" as="a" href="tel:+27123456789">+27 12 345 6789</Text>
+                        <Text color="gray.500" as="a" href="tel:+27846666978">+27 84 666 6978</Text>
                       </VStack>
                     </HStack>
 
@@ -374,7 +374,7 @@ function QuotePage() {
                     size="lg"
                     flex={1}
                     as="a"
-                    href="tel:+27123456789"
+                    href="tel:+27846666978"
                     _hover={{ bg: 'brand.accent', color: 'white' }}
                   >
                     Call Now

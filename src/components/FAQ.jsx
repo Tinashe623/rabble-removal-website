@@ -44,7 +44,7 @@ const faqs = [
   },
   {
     question: "How do I get a quote?",
-    answer: "You can get a free quote by filling out our online quote form, calling us directly at +27 12 345 6789, or messaging us on WhatsApp. We'll respond within 24 hours with a competitive quote."
+    answer: "You can get a free quote by filling out our online quote form, calling us directly at +27 84 666 6978, or messaging us on WhatsApp. We'll respond within 24 hours with a competitive quote."
   },
   {
     question: "Are you licensed for waste disposal?",

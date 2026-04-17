@@ -41,10 +41,10 @@ function WhyChooseUs() {
       <Container maxW="1200px">
         <SectionHeading
           title="Why Choose Us"
-          subtitle="What sets Tich Rubble Removal apart from the rest"
+          subtitle="What sets Exquisite Energies apart from the rest"
           alignment="center"
           highlightWord="Choose Us"
-          highlightSubtitle="Tich Rubble Removal"
+          highlightSubtitle="Exquisite Energies"
         />
 
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8} mt={12}>

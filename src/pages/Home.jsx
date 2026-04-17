@@ -12,7 +12,7 @@ function Home() {
   return (
     <Box>
       <SEO 
-        title="Tich Rubble Removal | Professional TLB Hire & Rubble Removal South Africa"
+        title="Exquisite Energies | Professional TLB Hire & Rubble Removal South Africa"
         description="Leading rubble removal company in Johannesburg & Pretoria. We offer TLB hire, site clearing, and waste disposal. Same-day service available. Get a free quote today!"
         keywords="rubble removal Johannesburg, TLB hire Pretoria, site clearing Gauteng, waste disposal, construction debris removal, TLB machine rental"
       />

@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 
 const SEO = ({ 
-  title = 'Tich Rubble Removal | TLB Hire & Rubble Removal South Africa',
+  title = 'Exquisite Energies | TLB Hire & Rubble Removal South Africa',
   description = 'Professional rubble removal, site clearing, and TLB hire services across South Africa. Fast, affordable, reliable. Contact us for same-day service.',
   keywords = 'rubble removal, TLB hire, site clearing, waste disposal, Johannesburg, Pretoria, Gauteng',
   ogImage = '/src/assets/images/hero-image.jpg',
@@ -14,7 +14,7 @@ const SEO = ({
       <meta name="title" content={title} />
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
-      <meta name="author" content="Tich Rubble Removal" />
+      <meta name="author" content="Exquisite Energies" />
       <meta name="robots" content="index, follow" />
       <link rel="canonical" href={url} />
 
@@ -24,7 +24,7 @@ const SEO = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="Tich Rubble Removal" />
+      <meta property="og:site_name" content="Exquisite Energies" />
       <meta property="og:locale" content="en_ZA" />
 
       {/* Twitter */}
@@ -45,9 +45,9 @@ const SEO = ({
         {JSON.stringify({
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
-          "name": "Tich Rubble Removal",
+          "name": "Exquisite Energies",
           "description": "Professional rubble removal and TLB hire services",
-          "telephone": "+27123456789",
+          "telephone": "+27846666978",
           "email": "info@tichrubble.co.za",
           "address": {
             "@type": "PostalAddress",

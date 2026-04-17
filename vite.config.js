@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'robots.txt', 'sitemap.xml'],
       manifest: {
-        name: 'Tich Rubble Removal',
-        short_name: 'Tich Rubble',
+        name: 'Exquisite Energies',
+        short_name: 'Exquisite Energies',
         description: 'Professional rubble removal, site clearing, and TLB hire services in South Africa',
         theme_color: '#1a1a1a',
         background_color: '#1a1a1a',

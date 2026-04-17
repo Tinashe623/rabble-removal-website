@@ -79,7 +79,7 @@ function Navbar() {
               _hover={{ color: 'brand.accent' }}
               transition="color 0.3s ease"
             >
-              TICH<span style={{ color: '#f59e0b' }}>.</span>
+              EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
             </Box>
           </Link>
 
@@ -159,7 +159,7 @@ function Navbar() {
                     color="white"
                     fontSize="lg"
                     fontWeight="500"
-                    _hover={{ color: 'brand.accent' }}
+              _hover={{ color: 'brand.dark' }}
                     transition="color 0.3s ease"
                   >
                     {link.label}

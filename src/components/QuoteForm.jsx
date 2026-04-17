@@ -267,7 +267,7 @@ function QuoteForm() {
                     </Box>
                     <VStack align="flex-start" spacing={0}>
                       <Text fontWeight="600" color="brand.dark">Phone</Text>
-                      <Text color="gray.500" as="a" href="tel:+27123456789">+27 12 345 6789</Text>
+                      <Text color="gray.500" as="a" href="tel:+27846666978">+27 84 666 6978</Text>
                     </VStack>
                   </HStack>
 
@@ -286,7 +286,7 @@ function QuoteForm() {
                     </Box>
                     <VStack align="flex-start" spacing={0}>
                       <Text fontWeight="600" color="brand.dark">WhatsApp</Text>
-                      <Text color="gray.500" as="a" href="https://wa.me/27123456789">Chat on WhatsApp</Text>
+                      <Text color="gray.500" as="a" href="https://wa.me/27846666978">Chat on WhatsApp</Text>
                     </VStack>
                   </HStack>
 

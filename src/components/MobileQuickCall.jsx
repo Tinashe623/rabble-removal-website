@@ -30,7 +30,7 @@ function MobileQuickCall() {
         color="brand.dark"
         size="md"
         as="a"
-        href="tel:+27123456789"
+        href="tel:+27846666978"
         fontWeight="600"
         _hover={{ bg: 'brand.accent', color: 'white' }}
       >

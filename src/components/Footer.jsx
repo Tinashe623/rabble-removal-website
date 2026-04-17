@@ -24,8 +24,8 @@ const footerLinks = {
     { label: 'Waste Disposal', href: '#services' },
   ],
   contact: [
-    { label: '+27 12 345 6789', isContact: true, href: 'tel:+27123456789' },
-    { label: '+27 12 345 6789', isWhatsApp: true, href: 'https://wa.me/27123456789' },
+    { label: '+27 84 666 6978', isContact: true, href: 'tel:+27846666978' },
+    { label: '+27 84 666 6978', isWhatsApp: true, href: 'https://wa.me/27846666978' },
     { label: 'info@tichrubble.co.za', isEmail: true, href: 'mailto:info@tichrubble.co.za' },
   ],
 }
@@ -154,14 +154,14 @@ function Footer() {
             <HStack spacing={3}>
               <Icon as={FaPhone} color="brand.accent" fontSize="sm" />
               <ChakraLink
-                href="tel:+27123456789"
+                href="tel:+27846666978"
                 color="gray.400"
                 fontSize="sm"
                 fontWeight="500"
                 _hover={{ color: 'brand.accent' }}
                 transition="color 0.3s ease"
               >
-                +27 12 345 6789
+                +27 84 666 6978
               </ChakraLink>
             </HStack>
             <HStack spacing={3}>
@@ -203,7 +203,7 @@ function Footer() {
 
         <HStack justify="space-between" flexWrap="wrap" spacing={4}>
           <Text color="gray.500" fontSize="sm" fontWeight="500">
-            © 2024 Tich Rubble Removal. All rights reserved.
+            © 2024 Exquisite Energies. All rights reserved.
           </Text>
 
           <HStack spacing={6}>

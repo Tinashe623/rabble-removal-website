@@ -23,8 +23,8 @@ const MotionBox = motion(Box)
 const MotionFlex = motion(Flex)
 
 const phoneNumbers = [
-  { label: 'Main Office', number: '+27 12 345 6789', icon: FaHeadset, available: 'Mon-Sat 7AM-6PM' },
-  { label: 'Mobile', number: '+27 82 345 6789', icon: FaMobileAlt, available: 'Available for urgent calls' },
+  { label: 'Main Office', number: '+27 84 666 6978', icon: FaHeadset, available: 'Mon-Sat 7AM-6PM' },
+  { label: 'Mobile', number: '+27 84 666 6978', icon: FaMobileAlt, available: 'Available for urgent calls' },
 ]
 
 const containerVariants = {
@@ -227,7 +227,7 @@ function Hero() {
                 px={6}
                 leftIcon={<FaWhatsapp size={18} />}
                 as="a"
-                href="https://wa.me/27123456789?text=Hi, I need rubble removal services"
+                href="https://wa.me/27846666978?text=Hi, I need rubble removal services"
                 _hover={{ bg: '#128C7E', transform: 'translateY(-3px)' }}
                 display={{ base: 'none', md: 'flex' }}
               >

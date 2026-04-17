@@ -16,7 +16,7 @@ const MotionBox = motion(Box)
 
 const testimonials = [
   {
-    quote: "Tich Rubble Removal cleared our construction site in record time. Professional, reliable, and excellent rates. Highly recommended!",
+    quote: "Exquisite Energies cleared our construction site in record time. Professional, reliable, and excellent rates. Highly recommended!",
     author: "Marcus Johnson",
     company: "JHB Construction",
     rating: 5,

@@ -24,16 +24,16 @@ import SectionHeading from './SectionHeading'
 const MotionBox = motion(Box)
 
 const phoneNumbers = [
-  { label: 'Main Office', number: '+27 12 345 6789', icon: FaHeadset, available: 'Mon-Sat 7AM-6PM' },
-  { label: 'Mobile', number: '+27 82 345 6789', icon: FaMobileAlt, available: 'Available for urgent calls' },
-  { label: 'WhatsApp', number: '+27 72 345 6789', icon: FaWhatsapp, available: 'Text us anytime' },
+  { label: 'Main Office', number: '+27 84 666 6978', icon: FaHeadset, available: 'Mon-Sat 7AM-6PM' },
+  { label: 'Mobile', number: '+27 84 666 6978', icon: FaMobileAlt, available: 'Available for urgent calls' },
+  { label: 'WhatsApp', number: '+27 84 666 6978', icon: FaWhatsapp, available: 'Text us anytime' },
 ]
 
 const contactMethods = [
   {
     icon: FaPhone,
     label: 'Call Us',
-    value: '+27 12 345 6789',
+    value: '+27 84 666 6978',
     description: 'Mon-Sat 7AM-6PM',
     action: 'call',
     color: 'brand.accent',
@@ -41,7 +41,7 @@ const contactMethods = [
   {
     icon: FaWhatsapp,
     label: 'WhatsApp',
-    value: '+27 72 345 6789',
+    value: '+27 84 666 6978',
     description: 'Text us anytime',
     action: 'whatsapp',
     color: '#25D366',
