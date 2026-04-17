@@ -43,8 +43,8 @@ function LoadingSpinner() {
               <Image
                 src="/logo.png"
                 alt="Exquisite Energies Logo"
-                h="80px"
-                w="80px"
+                h="120px"
+                w="120px"
                 objectFit="contain"
               />
             </motion.div>
