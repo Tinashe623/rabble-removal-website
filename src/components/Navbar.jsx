@@ -87,8 +87,8 @@ function Navbar() {
                 fontSize={{ base: 'lg', md: 'xl' }}
                 color="white"
                 fontWeight="bold"
-                _hover={{ color: 'brand.dark' }}
-                transition="color 0.3s ease"
+                _hover={{ color: 'brand.accent', textShadow: '0 0 10px rgba(245, 158, 11, 0.6)' }}
+                transition="all 0.3s ease"
               >
                 EXQUISITE <span style={{ color: '#f59e0b' }}>ENERGIES</span>
               </Box>
