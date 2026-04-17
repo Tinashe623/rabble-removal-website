@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from './Navbar'
 import Footer from './Footer'
 import FloatingWhatsApp from './FloatingWhatsApp'
+import BackToTop from './BackToTop'
 // import MobileQuickCall from './MobileQuickCall'
 
 function Layout() {
@@ -14,6 +15,7 @@ function Layout() {
       </Box>
       <Footer />
       <FloatingWhatsApp />
+      <BackToTop />
       {/* <MobileQuickCall /> */}
     </Box>
   )
