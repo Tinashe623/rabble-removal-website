@@ -15,6 +15,7 @@ import image5 from '../assets/images/image5.jpg'
 import image1 from '../assets/images/image1.jpg'
 import image2 from '../assets/images/image2.jpg'
 import image4 from '../assets/images/image4.jpg'
+import heroImage from '../assets/images/hero-image.jpg'
 
 const MotionBox = motion(Box)
 
@@ -23,7 +24,7 @@ const equipment = [
     name: '8-Ton Tipper Truck',
     capacity: '8 m³',
     description: 'Heavy-duty tipper truck ideal for large rubble removal jobs. High sides and powerful hydraulic system for efficient loading and unloading.',
-    image: image5,
+    image: heroImage,
     useCases: ['Large construction sites', 'Bulk rubble removal', 'Heavy loads'],
   },
   {

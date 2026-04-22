@@ -156,11 +156,29 @@ function Hero() {
           textAlign={{ base: 'center', md: 'left' }}
         >
           <MotionBox variants={itemVariants}>
-            <HStack spacing={2} mb={4}>
-              <Icon as={FaTruck} color="brand.accent" fontSize="xl" />
-              <Text color="brand.accent" fontWeight="600" fontSize="sm" textTransform="uppercase" letterSpacing="2px">
-                Professional Rubble Removal
-              </Text>
+            <HStack spacing={3} mb={5}>
+              <Box
+                px={4}
+                py={1.5}
+                borderRadius="full"
+                bgGradient="linear(to-r, #f59e0b, #ea580c)"
+                display="flex"
+                alignItems="center"
+                gap={2}
+                boxShadow="0 4px 20px rgba(245, 158, 11, 0.4)"
+                animation="pulse 2s ease-in-out infinite"
+                sx={{
+                  '@keyframes pulse': {
+                    '0%, 100%': { boxShadow: '0 4px 20px rgba(245, 158, 11, 0.4)' },
+                    '50%': { boxShadow: '0 4px 30px rgba(245, 158, 11, 0.6)' },
+                  },
+                }}
+              >
+                <Icon as={FaTruck} color="white" fontSize="sm" />
+                <Text color="white" fontWeight="700" fontSize="xs" textTransform="uppercase" letterSpacing="1.5px">
+                  Professional Rubble Removal
+                </Text>
+              </Box>
             </HStack>
           </MotionBox>
 
