@@ -18,7 +18,7 @@ import {
 } from '@chakra-ui/react'
 import { motion } from 'framer-motion'
 import { FaTruck, FaPhone, FaWhatsapp, FaCheckCircle, FaMobileAlt, FaHeadset } from 'react-icons/fa'
-import heroImage from '../assets/images/hero-image.jpg'
+import heroImage from '../assets/images/hero-optimized.jpg'
 
 const MotionBox = motion(Box)
 const MotionFlex = motion(Flex)
@@ -110,7 +110,7 @@ function Hero() {
         left={0}
         right={0}
         bottom={0}
-        bgGradient="linear(to-br, rgba(26,26,26,0.2), rgba(45,45,45,0.1))"
+        bgGradient="linear(to-br, rgba(26,26,26,0.05), rgba(45,45,45,0.02))"
         zIndex={1}
       />
       
@@ -133,7 +133,7 @@ function Hero() {
         left={0}
         right={0}
         bottom={0}
-        bgGradient="linear(to-t, brand.dark, transparent)"
+        bgGradient="linear(to-t, rgba(26,26,26,0.4), transparent)"
         zIndex={1}
       />
 
@@ -264,7 +264,7 @@ function Hero() {
         left={0}
         right={0}
         h="100px"
-        bgGradient="linear(to-t, brand.dark, transparent)"
+        bgGradient="linear(to-t, rgba(26,26,26,0.4), transparent)"
         zIndex={2}
       />
 

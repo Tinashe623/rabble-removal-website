@@ -76,8 +76,8 @@ function Navbar() {
               <Image
                 src="/logo.png"
                 alt="Exquisite Energies Logo"
-                h={{ base: '50px', md: '60px' }}
-                w={{ base: '50px', md: '60px' }}
+                h={{ base: '40px', md: '45px' }}
+                w={{ base: '40px', md: '45px' }}
                 objectFit="contain"
                 _hover={{ opacity: 0.8 }}
                 transition="opacity 0.3s ease"
