@@ -5,7 +5,16 @@ import { VitePWA } from 'vite-plugin-pwa'
 export default defineConfig({
   base: './',
   build: {
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          chakra: ['@chakra-ui/react', '@emotion/react', '@emotion/styled'],
+          motion: ['framer-motion']
+        }
+      }
+    }
   },
   plugins: [
     react(),
